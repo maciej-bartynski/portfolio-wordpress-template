@@ -60,3 +60,18 @@
         line-height: 30px;
     }
 }
+
+.paragraph {
+    @include serif;
+    font-size: 11px;
+    line-height: 16px;
+    color: $textgray;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 900px) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
