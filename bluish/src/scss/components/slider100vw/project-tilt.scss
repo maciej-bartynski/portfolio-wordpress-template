@@ -1,0 +1,156 @@
+.projekt--cell {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 80vw;
+    height: 97.6vw;
+    @include project-shadow;
+    background-color: $light;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .projekt_top-belt {
+        display: flex;
+        justify-content: center;
+        @include serif;
+        color: $blue;
+        font-size: 14px;
+        width: 100%;
+
+        background: $light;
+        padding: 1px 5vw;
+    }
+
+    .projekt_bottom-belt {
+        background: $light;
+        padding: 2vw 5vw 5vw 5vw;
+        .projekt_title {
+           
+            @include serif;
+            color: $blue;
+            font-size: 20px;
+            line-height: 26px;
+            margin: 1vw auto;
+            padding: 0;
+            text-align: left;
+            width: 100%;
+        }
+        .projekt_info {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            @include serif;
+            color: $blue;
+            font-size: 15px;
+            line-height: 20px;
+            .projekt_info_categories{
+                width: 80%;
+            }
+            .projekt_info_rats {
+                width: 20%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                span {
+                    display: inline-block;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.projekt--cell {
+@media screen and (min-width: 900px){
+    background-size: cover;
+    background-position:center 0px;
+    background-repeat: repeat-y;
+     
+    &:hover {
+        transition: background-position 7000ms linear;
+        background-position: center -2000px;
+    }
+   
+    height: 20vw;
+    @media screen and (min-width: 900px){
+        width: 17.6%;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 17.6%;
+    }
+    @media screen and (min-width: 1500px) {
+        width: calc((88.5% / 5));
+    }
+    
+    .projekt_top-belt {
+        font-size: 14px;
+        position: absolute;
+        top: -100px; left: 0;
+        transition: top 400ms;
+        padding: 1px 5%;
+    }
+    &:hover {
+        .projekt_top-belt{
+            top: 0;
+        }
+    }
+
+    .projekt_bottom-belt {
+        position: absolute;
+        width: 100%;
+        height: 120px;
+        bottom: -70px;
+        left: 0;
+        transition: bottom 400ms;
+        padding: 2% 5% 5% 5%;
+        
+        .projekt_title {
+            height: 50px;
+            font-size: 20px;
+            line-height: 26px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: solid 1px $blue;
+        }
+
+        .projekt_info {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            @include serif;
+            color: $blue;
+            font-size: 15px;
+            line-height: 20px;
+            .projekt_info_categories{
+                width: 80%;
+            }
+            .projekt_info_rats {
+                width: 20%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+            
+            }
+        }
+    }
+    &:hover {
+        .projekt_bottom-belt {
+            bottom: 0px;
+        }
+    }
+}}
+

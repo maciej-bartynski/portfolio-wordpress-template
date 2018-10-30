@@ -1,0 +1,12 @@
+#projekty03 {
+    margin-bottom: 50px;
+    h2 {
+        @include navi-margin;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        @media screen and (min-width: 900px){
+            text-align: left;
+        }
+    }
+}

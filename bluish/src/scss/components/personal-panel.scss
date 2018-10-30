@@ -1,0 +1,66 @@
+.personal-panel--component {
+    width: 341px;
+    height: 136px;
+    position: relative;
+    @media screen and (max-width: 599px) {
+        width: 60vw;
+        height: 23.9297vw;
+    }
+    
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 39.8835%;
+        border: solid 10px $blue;
+        border-radius: 50%;
+        box-sizing: border-box;
+        z-index: 2;
+
+        @media screen and (max-width: 599px) {
+            border: solid 3px $blue;
+        }
+    }
+    .personal-panel--positioner {
+        width: 80.0586%;
+        height: 92%;
+        position: absolute;
+        top: 4%;
+        right: 0;
+        z-index: 1;
+        background-color: #1177FF;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        .personal-panel--item {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            height: 45%;
+            background-color: $blue;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+            @include sans;
+            font-size: 20px;
+            @media screen and (max-width: 599px) {
+                font-size: 13px;
+            }
+            text-transform: uppercase;
+            color: $button-typo-blue;
+            padding-left: 35%;
+
+            cursor: pointer;
+            user-select: none;
+
+            &:hover {
+                background-color: $button-typo-blue;
+                color: $blue;
+            }
+        }
+    }
+}

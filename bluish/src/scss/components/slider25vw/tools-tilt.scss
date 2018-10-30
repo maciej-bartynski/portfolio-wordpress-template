@@ -1,0 +1,81 @@
+.tools--cell {
+    width: 47vw;
+    margin-bottom: 2vw;
+    
+    @media screen and (min-width: 900px){
+        width: 23%;
+        margin: 0 1%;
+    }
+
+    .tools_upper--positioner {
+        background: $light;
+        width: 100%;
+        position: relative;
+        padding: 5%;
+        .tools_icons--positioner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+
+            i {
+                color: $blue;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            img.tools_icons-logo--container {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                border: solid 1px $blue;
+            }
+        }
+
+        span.tools_name {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding-top: 5%;
+            @include serif;
+            font-size: 20;
+            line-height: 100%;
+            color: $blue
+        }
+    }
+
+    .tools_lower--positioner {
+        @media screen and (min-width: 900px){
+            opacity: 0;
+        }
+        transition: 200ms all;
+        width: 100%;
+        background: $blue;
+        span.tools_button {
+            display: flex;
+            width: 100%;
+            padding: 5%;
+            justify-content: center;
+            align-items: center;
+            @include serif;
+            font-size: 20;
+            line-height: 100%;
+            color: $button-typo-blue;
+        }
+    }
+    transition: 200ms all;
+    &:hover {
+
+        @media screen and (min-width: 900px){
+            cursor: pointer;
+            transform: scale(1.05);
+            .tools_lower--positioner {
+                opacity: 1;
+            }
+        }
+    }
+}
+

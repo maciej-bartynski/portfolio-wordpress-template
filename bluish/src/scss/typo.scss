@@ -1,0 +1,62 @@
+.title--big {
+     @include sans;
+     font-size: 21px;
+     line-height: 28px;
+     letter-spacing: 2px;
+     color: $blue;
+     font-weight: 400;
+     margin: 0;
+     padding: 0;
+    @media screen and (min-width: 900px){
+         font-size: 60px;
+         line-height: 80px;
+         letter-spacing: 6px;
+    }
+}
+
+.section-title {
+    @include sans;
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    color: $blue;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 900px) {
+        font-size: 40px;
+        line-height: 52px;
+    }
+}
+
+.inner-title {
+    @include serif;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    color: $blue;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 900px) {
+        font-size: 20px;
+        line-height: 40px;
+    }
+}
+
+.excerpt {
+    @include serif;
+    font-size: 14px;
+    line-height: 19px;
+    color: $blue;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: 900px) {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}

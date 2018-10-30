@@ -1,0 +1,24 @@
+@import './scss/vars.scss';
+@import './scss/typo.scss';
+@import './scss/sections/navbar.scss';
+@import './scss/sections/header.scss';
+@import './scss/sections/portfolio.scss';
+@import './scss/sections/tools.scss';
+@import './scss/sections/searchfor.scss';
+@import './scss/sections/questions.scss';
+
+//components
+@import './scss/components/personal-panel.scss';
+@import './scss/components/svg-animation.scss';
+@import './scss/components/slider100vw/project-slider.scss';
+@import './scss/components/slider100vw/project-tilt.scss';
+@import './scss/components/slider25vw/tools-slider.scss';
+@import './scss/components/slider25vw/tools-tilt.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}

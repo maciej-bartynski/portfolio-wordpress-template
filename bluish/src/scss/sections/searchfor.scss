@@ -1,0 +1,88 @@
+#searchfor05 {
+    width: 100%;
+    .searchfor05--title {
+        width: 100%;
+        @include navi-margin;
+        text-align: center;
+        @media screen and (min-width: 900px){
+            text-align: left;
+            padding-bottom: 20px;
+        }
+    }
+    .searchfor05_list--container {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        .searchfor05_list--item {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+    }
+    .searchfor05_post--positioner {
+        display: block;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 40px;
+        @media screen and (min-width: 900px){
+            padding: 0;
+        }
+        .searchfor05_article--title {
+            width: 100%;
+            max-width: 500px;
+            font-weight: normal;
+            text-align: left;
+            padding: 10px 0;
+            border-bottom: solid 5px $lightgray; 
+            @media screen and (min-width: 900px){
+                width: 50%;
+                min-width: 200px;
+            }
+        }
+        .searchfor05_article--innerlist {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            padding-left: 5%;
+            @media screen and (min-width: 900px) {
+                padding-left: 20%;
+            }
+            .searchfor05_article--inneritem {
+                display: block;
+                width: 100%;
+                padding: 7px 0;
+                letter-spacing: 0;
+                line-height: 110%;
+                
+            }
+        }
+    }
+}
+
+
+
+
+
+/*<section id="searchfor05">
+            <h2 class="section-title searchfor05--title">Czego szukam</h2>
+            <ul class="searchfor05_list--container">
+                <li class="searchfor05_list--item">
+                    <article class="searchfor05_post--positioner">
+                        <h3 class="inner-title searchfor05_article--title"></h3>
+                        <ul class="searchfor05_article--innerlist">
+                            <li class="searchfor05_article--inneritem">Tego i owego</li>
+                            <li class="searchfor05_article--inneritem">I tamtego też</li>
+                        </ul>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        */

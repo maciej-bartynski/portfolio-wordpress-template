@@ -1,0 +1,94 @@
+#tools04{
+    margin-bottom: 50px;
+    .tools04--title {
+        width: 100%;
+        text-align: center;
+        @media screen and (min-width: 900px) {
+            text-align: left;
+            @include navi-margin;
+        }
+    }
+}
+
+.tools04_list--wrapper {
+    display: none;
+    width: 100%;
+    @media screen and (min-width: 900px) {
+        text-align: left;
+        @include navi-margin;
+    }
+    .tools04_list--button {
+        color: $blue;
+        @include sans;
+        letter-spacing: 1px;
+        font-size: 12px;
+        margin: 30px 0 20px 0;
+        cursor: pointer;
+        user-select: none;
+    }
+    .tools04_list--title {
+        width: 100%;
+        font-weight: normal;
+    }
+    .tools04_list--container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .tools04_list--item {
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            padding: 0 1%;
+        }
+    }
+
+    //
+    .tools04-project--positioner{
+        cursor: pointer;
+
+        width: 100%;
+        padding: 10px 5%;
+        border: solid 1px transparent;
+        border-right: solid 10vw $lightblue; 
+        border-bottom: solid 2px transparent;
+        background: $light;
+        margin-bottom: 1px;
+        i { 
+            color: $lightblue;
+            @include serif;
+            font-size: 20px;
+        }
+        .tools04-project_title{
+            color: $lightblue;
+            @include serif;
+            font-size: 20px;
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+        .tools04-project_taglist{
+            color: $lightblue;
+            @include serif;
+            font-size: 15px;
+            .tools04-project_tagitem{
+                padding: 0 10px;
+            }
+        }
+        &:hover {
+            transition: all 200ms;
+            border-right: solid 10vw $blue;
+            border-bottom: solid 2px $blue;
+            i,
+            .tools04-project_title,
+            .tools04-project_taglist{
+                color: $blue;      
+            }
+        }
+
+    }
+}

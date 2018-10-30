@@ -1,0 +1,147 @@
+.slider100vw--wrapper {
+    @media screen and (max-width: 899px){
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        .slider100vw--slider {
+            position: relative;
+            transition: left 500ms;
+            display: flex;
+            justify-content: space-between;
+            left: 0;
+            
+            .slider100vw--item {
+                margin: 10vw;
+            }
+
+        }
+    }
+}
+
+.slider100vw--wrapper {
+    @media screen and (min-width: 900px){
+        width: 100%;
+        @include navi-margin;
+
+        .slider100vw--slider {
+            margin: 0 auto;
+            position: static;
+            display: inline;
+            box-sizing: border-box;
+                        
+            .slider100vw--item {
+                margin: 1%;
+                display: inline-block!important;
+            }
+        }
+    }
+}
+
+//slider title
+.slider100vw--wrapper {
+    .slider100vw--slider-title {
+        width: 100%;
+        margin: 40px 0 0 0;
+        padding: 0;
+        text-align: center;
+
+        @include sans;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: 1px;
+        color: $blue;
+        font-weight: 400;
+
+        @media screen and (min-width: 900px) {
+            display: none;
+        }
+    }
+}
+
+//switcher
+.slider100vw--switcher {
+    display: flex;
+    @media screen and (min-width: 900px){
+        display: none;
+    }
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    
+    span {
+        @include serif;
+        display: inline-block;
+        color: $blue;
+        width: 25px;
+        text-align: center;
+        @media screen and (min-width: 900px){
+            display: none;
+        }
+    }
+
+    .slideswitch-left,
+    .slideswitch-right {
+        height: 50px;
+        padding: 0 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $blue;
+        font-size: 15px;
+        @include serif;
+    }
+
+    #slideswitch-timer {
+        height: 50px;
+        width: 50px;
+        position: relative;
+
+        #slideswitch-clock {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+        #slideswitch-niddle {
+            position: absolute;
+            top: 0%;
+            left: 49%;
+            height: 100%;
+                        
+            &.add-animation {
+                animation-iteration-count: 1;
+                animation-fill-mode: backwards;
+                animation-timing-function: linear;
+                animation-name: timer-work;
+                animation-duration: 15000ms;
+            }
+            &.switch-animation {
+                animation-iteration-count: 1;
+                animation-fill-mode: backwards;
+                animation-timing-function: linear;
+                animation-duration: 500ms;
+                animation-name: timer-switch;
+            }
+            @keyframes timer-work {
+                from {
+                    transform: rotate(0);
+                }
+
+                to {
+                    transform: rotate(360deg);
+
+                }
+            }
+            @keyframes timer-switch {
+                from {
+                    transform: rotate(0);
+                }
+
+                to {
+                    transform: rotate(360deg)
+                }
+            }
+        }
+    }
+}

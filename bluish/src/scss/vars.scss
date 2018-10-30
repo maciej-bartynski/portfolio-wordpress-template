@@ -1,0 +1,45 @@
+$blue: #0066ff;
+$lightblue: #5498FF;
+$button-typo-blue: #8DBAFF;
+$lightgray: #909090;
+$bgcolo: #eeeeee;
+$light: #ffffff;
+$placeholder: #707070;
+$textgray: #808080;
+
+//margins
+@mixin navi-margin {
+    padding: 0 40px;
+    @media screen and (min-width: 900px){
+        padding: 0 5%;
+    }
+    @media screen and (min-width: 1200px) {
+        padding: 0 8%;
+    }
+    @media screen and (min-width: 1500px) {
+        padding: 0 140px;
+    }
+}
+
+
+body {
+    background-color: $bgcolo;
+}
+
+//weights: 300, 400, 500, 700
+@mixin sans {
+    font-family: 'Roboto', sans-serif;
+}
+
+//weights: 300, 400, 700
+@mixin serif {
+    font-family: 'Roboto Slab', serif;
+}
+
+//portfolio tilt shadow
+
+@mixin project-shadow {
+    -webkit-box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
+    -moz-box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
+    box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
+}
