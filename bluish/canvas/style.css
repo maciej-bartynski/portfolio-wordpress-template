@@ -1,0 +1,8 @@
+#machina-wrapper {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 1600px;
+  min-width: 300px; }
+  #machina-wrapper #machina {
+    width: 100%;
+    height: auto; }

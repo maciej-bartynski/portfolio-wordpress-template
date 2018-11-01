@@ -10,7 +10,7 @@ module.exports = {
         canvas: ["@babel/polyfill", "./canvas.js"],
     },
     output: {
-        path: path.resolve(__dirname, 'bluish/docs'),
+        path: path.resolve(__dirname, 'bluish/canvas'),
         filename: '[name].js'
         //publicPath: '/build'
     },
