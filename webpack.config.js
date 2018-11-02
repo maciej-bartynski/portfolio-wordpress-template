@@ -6,8 +6,8 @@ var extractPlugin = new ExtractTextPlugin({
 
 module.exports = {
     entry: {
-        index: ["@babel/polyfill", "./bluish/src/index.js"],
-        //canvas: ["@babel/polyfill", "./canvas.js"],
+        home: ["@babel/polyfill", "./bluish/src/index.js"],
+        hero: ["@babel/polyfill", "./bluish/src/hero-animation.js"],
     },
     output: {
         path: path.resolve(__dirname, 'bluish/docs'),

@@ -1,368 +1,386 @@
-.svg-animation {
+//wrapper fixed bg:
+.animation-panel {
+    //styles in header section
+}
+
+
+//regualar machina:
+
+#machina-wrapper {
     width: 47.25vw;
     height: 25vw;
+    #machina {
+        width: 100%;
+        height: auto;
+    }
+}
+
+//irregular machina
+
+#second-machina-wrapper {
+    width: 47.25vw;
+    height: 25vw;
+    display: none;
     position: relative;
 
-    opacity: 0.7;
-}
-
-.inside-conta {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-#engine-box {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    width: 30%;
-    height: 24%;
-}
-
-#light-box {
-    position: absolute;
-    top: 0;
-    right: 30%;
-
-    width: 30%;
-    height: 27.913%;
-
-    transform: rotate(-90deg);
-}
-
-#cogs-box {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 30%;
-    height: 100%;
-}
-
-#compas-box {
-    top: 0;
-    left: 0;
-    width: auto;
-    height: 100%;
-}
-
-#engine-obudowa {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    width: 100%;
-}
-
-#engine-cog {
-    position: absolute;
-    left: 1%;
-    bottom: 1%;
-
-    width: 40%;
-    z-index: 10;
-
-    animation: rotate-cog 4000ms ease infinite;
-}
-
-#engine-littlecog {
-    position: absolute;
-    left: 62%;
-    bottom: 30%;
-    z-index: 10;
-
-    width: 15%;
-    animation: 4000ms wire-cog infinite ease;
-}
-
-#engine-tlok {
-    position: absolute;
-    right: 0;
-    bottom: 1%;
-
-    width: 25%;
-    animation: 4000ms move-tlok infinite ease;
-}
-
-#engine-belka {
-    position: absolute;
-    right: 34%;
-    bottom: 15%;
-
-    width: 30%;
-    animation: translate-stick 4000ms ease infinite;
-}
-
-//kogi
-#cog-1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    animation: 15000ms infinite linear rotate-cog;
-}
-
-#cog-2 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35%;
-    animation: 5000ms infinite ease rotate-cog;
-}
-
-#cog-3 {
-    position: absolute;
-    top: 35%;
-    left: 26%;
-    width: 15%;
-    animation: 5000ms infinite ease rotate-cog;
-}
-
-#cog-4 {
-    position: absolute;
-    top: 21%;
-    right: 1%;
-    width: 55%;
-    animation: 15000ms infinite linear rotate-cog;
-    animation-direction: reverse;
-}
-
-//kompas
-#compas-clock {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-
-}
-
-#compas-niddle {
-    position: absolute;
-    top: 10%;
-    height: 80%;
-    left: 25.5%;
-    animation: shake-niddle 5000ms infinite linear;
-}
-
-//light
-#light-off {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-
-}
-
-#light-on {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    opacity: 0;
-    animation: light-on 5000ms infinite ease;
-}
-
-@keyframes light-on {
-    from {
-        opacity: 0;
+    .inside-conta {
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
 
-    10% {
-        opacity: 0.3;
-    }
-
-    15% {
-        opacity: 0.1;
-    }
-
-    20% {
-        opacity: 0.4;
-    }
-
-    25% {
-        opacity: 0.2;
-    }
-
-    30% {
-        opacity: 0.5;
-    }
-
-    35% {
-        opacity: 0.2;
-    }
-
-    45% {
-        opacity: 0.6;
-    }
-
-    50% {
-        opacity: 0.2;
-    }
-
-    51% {
-        opacity: 0.8;
-    }
-
-    52% {
-        opacity: 0.3;
-    }
-
-    55% {
-        opacity: 0.8;
-    }
-
-    65% {
-        opacity: 0.1;
-    }
-
-    75% {
-        opacity: 0.9;
-    }
-
-    85% {
-        opacity: 0.2;
-    }
-
-    95% {
-        opacity: 0.99;
-    }
-
-    98% {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes shake-niddle {
-    from {
-        transform: rotate(-10deg);
-    }
-
-    10% {
-        transform: rotate(15deg);
-    }
-
-    15% {
-        transform: rotate(5deg);
-    }
-
-    20% {
-        transform: rotate(20deg);
-    }
-
-    25% {
-        transform: rotate(10deg);
-    }
-
-    30% {
-        transform: rotate(30deg);
-    }
-
-    35% {
-        transform: rotate(20deg);
-    }
-
-    45% {
-        transform: rotate(60deg);
-    }
-
-    50% {
-        transform: rotate(40deg);
-    }
-
-    51% {
-        transform: rotate(52deg);
-    }
-
-    52% {
-        transform: rotate(42deg);
-    }
-
-    55% {
-        transform: rotate(51deg);
-    }
-
-    65% {
-        transform: rotate(45deg);
-    }
-
-    75% {
-        transform: rotate(49deg);
-    }
-
-    85% {
-        transform: rotate(42deg);
-    }
-
-    95% {
-        transform: rotate(50deg);
-    }
-
-    98% {
-        transform: rotate(-50deg);
-    }
-
-
-    to {
-        transform: rotate(0deg);
-    }
-}
-
-
-@keyframes wire-cog {
-    from {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes move-tlok {
-    from {
+    #engine-box {
+        position: absolute;
+        bottom: 0;
         right: 0;
+
+        width: 30%;
+        height: 24%;
     }
 
-    50% {
-        right: 10%;
+    #light-box {
+        position: absolute;
+        top: 0;
+        right: 30%;
+
+        width: 30%;
+        height: 27.913%;
+
+        transform: rotate(-90deg);
     }
 
-    to {
+    #cogs-box {
+        position: absolute;
+        top: 0;
         right: 0;
-    }
-}
 
-
-@keyframes rotate-cog {
-    from {
-        transform: rotate(0);
+        width: 30%;
+        height: 100%;
     }
 
-    50% {
-        transform: rotate(180deg);
+    #compas-box {
+        top: 0;
+        left: 0;
+        width: auto;
+        height: 100%;
     }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
+    #engine-obudowa {
+        position: absolute;
+        bottom: 0;
+        right: 0;
 
-@keyframes translate-stick {
-    from {
+        width: 100%;
+    }
+
+    #engine-cog {
+        position: absolute;
+        left: 1%;
+        bottom: 1%;
+
+        width: 40%;
+        z-index: 10;
+
+        animation: rotate-cog 4000ms ease infinite;
+    }
+
+    #engine-littlecog {
+        position: absolute;
+        left: 62%;
+        bottom: 30%;
+        z-index: 10;
+
+        width: 15%;
+        animation: 4000ms wire-cog infinite ease;
+    }
+
+    #engine-tlok {
+        position: absolute;
+        right: 0;
+        bottom: 1%;
+
+        width: 25%;
+        animation: 4000ms move-tlok infinite ease;
+    }
+
+    #engine-belka {
+        position: absolute;
+        right: 34%;
         bottom: 15%;
+
+        width: 30%;
+        animation: translate-stick 4000ms ease infinite;
     }
 
-    50% {
-        bottom: 75%;
+    //kogi
+    #cog-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        animation: 15000ms infinite linear rotate-cog;
     }
 
-    to {
-        bottom: 15%;
+    #cog-2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 35%;
+        animation: 5000ms infinite ease rotate-cog;
+    }
+
+    #cog-3 {
+        position: absolute;
+        top: 35%;
+        left: 26%;
+        width: 15%;
+        animation: 5000ms infinite ease rotate-cog;
+    }
+
+    #cog-4 {
+        position: absolute;
+        top: 21%;
+        right: 1%;
+        width: 55%;
+        animation: 15000ms infinite linear rotate-cog;
+        animation-direction: reverse;
+    }
+
+    //kompas
+    #compas-clock {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+
+    }
+
+    #compas-niddle {
+        position: absolute;
+        top: 10%;
+        height: 80%;
+        left: 25.5%;
+        animation: shake-niddle 5000ms infinite linear;
+    }
+
+    //light
+    #light-off {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+
+    }
+
+    #light-on {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        opacity: 0;
+        animation: light-on 5000ms infinite ease;
+    }
+
+    @keyframes light-on {
+        from {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 0.3;
+        }
+
+        15% {
+            opacity: 0.1;
+        }
+
+        20% {
+            opacity: 0.4;
+        }
+
+        25% {
+            opacity: 0.2;
+        }
+
+        30% {
+            opacity: 0.5;
+        }
+
+        35% {
+            opacity: 0.2;
+        }
+
+        45% {
+            opacity: 0.6;
+        }
+
+        50% {
+            opacity: 0.2;
+        }
+
+        51% {
+            opacity: 0.8;
+        }
+
+        52% {
+            opacity: 0.3;
+        }
+
+        55% {
+            opacity: 0.8;
+        }
+
+        65% {
+            opacity: 0.1;
+        }
+
+        75% {
+            opacity: 0.9;
+        }
+
+        85% {
+            opacity: 0.2;
+        }
+
+        95% {
+            opacity: 0.99;
+        }
+
+        98% {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes shake-niddle {
+        from {
+            transform: rotate(-10deg);
+        }
+
+        10% {
+            transform: rotate(15deg);
+        }
+
+        15% {
+            transform: rotate(5deg);
+        }
+
+        20% {
+            transform: rotate(20deg);
+        }
+
+        25% {
+            transform: rotate(10deg);
+        }
+
+        30% {
+            transform: rotate(30deg);
+        }
+
+        35% {
+            transform: rotate(20deg);
+        }
+
+        45% {
+            transform: rotate(60deg);
+        }
+
+        50% {
+            transform: rotate(40deg);
+        }
+
+        51% {
+            transform: rotate(52deg);
+        }
+
+        52% {
+            transform: rotate(42deg);
+        }
+
+        55% {
+            transform: rotate(51deg);
+        }
+
+        65% {
+            transform: rotate(45deg);
+        }
+
+        75% {
+            transform: rotate(49deg);
+        }
+
+        85% {
+            transform: rotate(42deg);
+        }
+
+        95% {
+            transform: rotate(50deg);
+        }
+
+        98% {
+            transform: rotate(-50deg);
+        }
+
+
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+
+    @keyframes wire-cog {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes move-tlok {
+        from {
+            right: 0;
+        }
+
+        50% {
+            right: 10%;
+        }
+
+        to {
+            right: 0;
+        }
+    }
+
+
+    @keyframes rotate-cog {
+        from {
+            transform: rotate(0);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes translate-stick {
+        from {
+            bottom: 15%;
+        }
+
+        50% {
+            bottom: 75%;
+        }
+
+        to {
+            bottom: 15%;
+        }
     }
 }

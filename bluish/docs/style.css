@@ -309,6 +309,14 @@ body {
         display: flex;
         justify-content: center;
         align-items: center; }
+        #header02 .header02--positioner .header02--container .animation-panel.fixed-background {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 100vw;
+          opacity: 0.1;
+          z-index: -1; }
 
 @media screen and (min-width: 900px) {
   #header02 {
@@ -766,7 +774,6 @@ body {
 
 #contact07 #contact07_contact--wrapper .contact07_contact--container {
   width: 100%;
-  background: #ffffff;
   min-height: 200px; }
 
 #contact07 #contact07_contact--wrapper .contact07_contact--switcher {
@@ -802,34 +809,38 @@ body {
       #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header {
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         background: #5498FF;
-        color: #ffffff; }
+        color: #ffffff;
+        position: relative; }
         #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--title {
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
           width: 100%;
+          margin: 0;
           padding: 5px;
-          color: #ffffff; }
+          color: #ffffff;
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 100%; }
         #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--closer {
-          padding: 2px;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-end;
-          align-items: center;
-          text-transform: uppercase;
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 5px 5px 0 0;
           font-family: 'Roboto', sans-serif;
           font-weight: 300;
           font-size: 10px;
           cursor: pointer; }
           #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--closer i {
-            margin-left: 5px;
-            font-size: 15px; }
+            font-size: 12px;
+            line-height: 100%; }
+      #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--container {
+        background: #ffffff; }
     #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--switcher {
       width: 50px;
       height: 50px;
@@ -838,7 +849,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16); } }
+      box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
+      cursor: pointer; } }
 
 .personal-panel--component {
   width: 341px;
@@ -900,147 +912,136 @@ body {
         background-color: #8DBAFF;
         color: #0066ff; }
 
-.svg-animation {
+#machina-wrapper {
+  width: 47.25vw;
+  height: 25vw; }
+  #machina-wrapper #machina {
+    width: 100%;
+    height: auto; }
+
+#second-machina-wrapper {
   width: 47.25vw;
   height: 25vw;
-  position: relative;
-  opacity: 0.7; }
-
-.inside-conta {
-  position: relative;
-  width: 100%;
-  height: 100%; }
-
-#engine-box {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 30%;
-  height: 24%; }
-
-#light-box {
-  position: absolute;
-  top: 0;
-  right: 30%;
-  width: 30%;
-  height: 27.913%;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg); }
-
-#cogs-box {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30%;
-  height: 100%; }
-
-#compas-box {
-  top: 0;
-  left: 0;
-  width: auto;
-  height: 100%; }
-
-#engine-obudowa {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%; }
-
-#engine-cog {
-  position: absolute;
-  left: 1%;
-  bottom: 1%;
-  width: 40%;
-  z-index: 10;
-  -webkit-animation: rotate-cog 4000ms ease infinite;
-          animation: rotate-cog 4000ms ease infinite; }
-
-#engine-littlecog {
-  position: absolute;
-  left: 62%;
-  bottom: 30%;
-  z-index: 10;
-  width: 15%;
-  -webkit-animation: 4000ms wire-cog infinite ease;
-          animation: 4000ms wire-cog infinite ease; }
-
-#engine-tlok {
-  position: absolute;
-  right: 0;
-  bottom: 1%;
-  width: 25%;
-  -webkit-animation: 4000ms move-tlok infinite ease;
-          animation: 4000ms move-tlok infinite ease; }
-
-#engine-belka {
-  position: absolute;
-  right: 34%;
-  bottom: 15%;
-  width: 30%;
-  -webkit-animation: translate-stick 4000ms ease infinite;
-          animation: translate-stick 4000ms ease infinite; }
-
-#cog-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  -webkit-animation: 15000ms infinite linear rotate-cog;
-          animation: 15000ms infinite linear rotate-cog; }
-
-#cog-2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 35%;
-  -webkit-animation: 5000ms infinite ease rotate-cog;
-          animation: 5000ms infinite ease rotate-cog; }
-
-#cog-3 {
-  position: absolute;
-  top: 35%;
-  left: 26%;
-  width: 15%;
-  -webkit-animation: 5000ms infinite ease rotate-cog;
-          animation: 5000ms infinite ease rotate-cog; }
-
-#cog-4 {
-  position: absolute;
-  top: 21%;
-  right: 1%;
-  width: 55%;
-  -webkit-animation: 15000ms infinite linear rotate-cog;
-          animation: 15000ms infinite linear rotate-cog;
-  animation-direction: reverse; }
-
-#compas-clock {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%; }
-
-#compas-niddle {
-  position: absolute;
-  top: 10%;
-  height: 80%;
-  left: 25.5%;
-  -webkit-animation: shake-niddle 5000ms infinite linear;
-          animation: shake-niddle 5000ms infinite linear; }
-
-#light-off {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%; }
-
-#light-on {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  opacity: 0;
-  -webkit-animation: light-on 5000ms infinite ease;
-          animation: light-on 5000ms infinite ease; }
+  display: none;
+  position: relative; }
+  #second-machina-wrapper .inside-conta {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  #second-machina-wrapper #engine-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 24%; }
+  #second-machina-wrapper #light-box {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    width: 30%;
+    height: 27.913%;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
+  #second-machina-wrapper #cogs-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%; }
+  #second-machina-wrapper #compas-box {
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%; }
+  #second-machina-wrapper #engine-obudowa {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%; }
+  #second-machina-wrapper #engine-cog {
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+    width: 40%;
+    z-index: 10;
+    -webkit-animation: rotate-cog 4000ms ease infinite;
+            animation: rotate-cog 4000ms ease infinite; }
+  #second-machina-wrapper #engine-littlecog {
+    position: absolute;
+    left: 62%;
+    bottom: 30%;
+    z-index: 10;
+    width: 15%;
+    -webkit-animation: 4000ms wire-cog infinite ease;
+            animation: 4000ms wire-cog infinite ease; }
+  #second-machina-wrapper #engine-tlok {
+    position: absolute;
+    right: 0;
+    bottom: 1%;
+    width: 25%;
+    -webkit-animation: 4000ms move-tlok infinite ease;
+            animation: 4000ms move-tlok infinite ease; }
+  #second-machina-wrapper #engine-belka {
+    position: absolute;
+    right: 34%;
+    bottom: 15%;
+    width: 30%;
+    -webkit-animation: translate-stick 4000ms ease infinite;
+            animation: translate-stick 4000ms ease infinite; }
+  #second-machina-wrapper #cog-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    -webkit-animation: 15000ms infinite linear rotate-cog;
+            animation: 15000ms infinite linear rotate-cog; }
+  #second-machina-wrapper #cog-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    -webkit-animation: 5000ms infinite ease rotate-cog;
+            animation: 5000ms infinite ease rotate-cog; }
+  #second-machina-wrapper #cog-3 {
+    position: absolute;
+    top: 35%;
+    left: 26%;
+    width: 15%;
+    -webkit-animation: 5000ms infinite ease rotate-cog;
+            animation: 5000ms infinite ease rotate-cog; }
+  #second-machina-wrapper #cog-4 {
+    position: absolute;
+    top: 21%;
+    right: 1%;
+    width: 55%;
+    -webkit-animation: 15000ms infinite linear rotate-cog;
+            animation: 15000ms infinite linear rotate-cog;
+    animation-direction: reverse; }
+  #second-machina-wrapper #compas-clock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; }
+  #second-machina-wrapper #compas-niddle {
+    position: absolute;
+    top: 10%;
+    height: 80%;
+    left: 25.5%;
+    -webkit-animation: shake-niddle 5000ms infinite linear;
+            animation: shake-niddle 5000ms infinite linear; }
+  #second-machina-wrapper #light-off {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%; }
+  #second-machina-wrapper #light-on {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    -webkit-animation: light-on 5000ms infinite ease;
+            animation: light-on 5000ms infinite ease; }
 
 @-webkit-keyframes light-on {
   from {
