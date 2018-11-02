@@ -768,13 +768,102 @@ body {
     align-items: center;
     padding: 10px 0;
     width: 100%; }
+    @media screen and (min-width: 900px) {
+      #contact07 .contact07-title {
+        justify-content: flex-start; } }
+
+#contact07 #contact07_contact--wrapper div#plugin-form {
+  width: 100%; }
+  #contact07 #contact07_contact--wrapper div#plugin-form input, #contact07 #contact07_contact--wrapper div#plugin-form textarea {
+    display: block;
+    margin: 0 0 25px 0;
+    width: 100%;
+    max-width: 820px;
+    border-bottom: solid 4px #0066ff;
+    border-left: solid 40px #0066ff;
+    border-right: none;
+    border-top: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 2% 15px 2%;
+    color: #808080;
+    font-family: 'Roboto Slab', serif;
+    font-size: 10px;
+    line-height: 15px; }
+    #contact07 #contact07_contact--wrapper div#plugin-form input::-webkit-input-placeholder, #contact07 #contact07_contact--wrapper div#plugin-form textarea::-webkit-input-placeholder {
+      color: #707070;
+      font-family: 'Roboto Slab', serif; }
+    #contact07 #contact07_contact--wrapper div#plugin-form input:-ms-input-placeholder, #contact07 #contact07_contact--wrapper div#plugin-form textarea:-ms-input-placeholder {
+      color: #707070;
+      font-family: 'Roboto Slab', serif; }
+    #contact07 #contact07_contact--wrapper div#plugin-form input::-ms-input-placeholder, #contact07 #contact07_contact--wrapper div#plugin-form textarea::-ms-input-placeholder {
+      color: #707070;
+      font-family: 'Roboto Slab', serif; }
+    #contact07 #contact07_contact--wrapper div#plugin-form input::placeholder, #contact07 #contact07_contact--wrapper div#plugin-form textarea::placeholder {
+      color: #707070;
+      font-family: 'Roboto Slab', serif; }
+    #contact07 #contact07_contact--wrapper div#plugin-form input:hover, #contact07 #contact07_contact--wrapper div#plugin-form input:active, #contact07 #contact07_contact--wrapper div#plugin-form input:focus, #contact07 #contact07_contact--wrapper div#plugin-form textarea:hover, #contact07 #contact07_contact--wrapper div#plugin-form textarea:active, #contact07 #contact07_contact--wrapper div#plugin-form textarea:focus {
+      text-align: left;
+      padding: 15px 2% 15px 2%;
+      display: block;
+      margin: 0 0 25px 0;
+      width: 100%;
+      max-width: 820px;
+      outline: none;
+      border-bottom: solid 4px #0066ff;
+      border-left: solid 40px #0066ff;
+      border-right: none;
+      border-top: none;
+      color: #808080;
+      font-family: 'Roboto Slab', serif;
+      font-size: 10px;
+      line-height: 15px; }
+    @media screen and (max-width: 300px) {
+      #contact07 #contact07_contact--wrapper div#plugin-form input, #contact07 #contact07_contact--wrapper div#plugin-form textarea {
+        border-left: solid 10px #0066ff; }
+        #contact07 #contact07_contact--wrapper div#plugin-form input:hover, #contact07 #contact07_contact--wrapper div#plugin-form input:active, #contact07 #contact07_contact--wrapper div#plugin-form input:focus, #contact07 #contact07_contact--wrapper div#plugin-form textarea:hover, #contact07 #contact07_contact--wrapper div#plugin-form textarea:active, #contact07 #contact07_contact--wrapper div#plugin-form textarea:focus {
+          border-left: solid 10px #0066ff; } }
+  #contact07 #contact07_contact--wrapper div#plugin-form .button {
+    width: 216px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 15px;
+    background: #5498FF;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 12px;
+    margin: 15px auto 15px auto; }
+    @media screen and (min-width: 900px) {
+      #contact07 #contact07_contact--wrapper div#plugin-form .button {
+        margin: 20px 0 20px 0; } }
+    #contact07 #contact07_contact--wrapper div#plugin-form .button:hover, #contact07 #contact07_contact--wrapper div#plugin-form .button:active, #contact07 #contact07_contact--wrapper div#plugin-form .button:focus {
+      background: #0066ff; }
+
+#contact07 #contact07_contact--wrapper.isFixed div#plugin-form input, #contact07 #contact07_contact--wrapper.isFixed div#plugin-form textarea {
+  border-left: solid 40px #0066ff;
+  width: 90%;
+  margin: 12.5px auto 12.5px auto; }
+  #contact07 #contact07_contact--wrapper.isFixed div#plugin-form input:hover, #contact07 #contact07_contact--wrapper.isFixed div#plugin-form input:active, #contact07 #contact07_contact--wrapper.isFixed div#plugin-form input:focus, #contact07 #contact07_contact--wrapper.isFixed div#plugin-form textarea:hover, #contact07 #contact07_contact--wrapper.isFixed div#plugin-form textarea:active, #contact07 #contact07_contact--wrapper.isFixed div#plugin-form textarea:focus {
+    border-left: solid 40px #0066ff;
+    width: 90%;
+    margin: 12.5px auto 12.5px auto; }
+
+#contact07 #contact07_contact--wrapper.isFixed div#plugin-form .button {
+  margin: 15px auto 15px auto; }
 
 #contact07 #contact07_contact--wrapper .contact07_contact--header {
   display: none; }
 
 #contact07 #contact07_contact--wrapper .contact07_contact--container {
-  width: 100%;
-  min-height: 200px; }
+  width: 100%; }
 
 #contact07 #contact07_contact--wrapper .contact07_contact--switcher {
   display: none; }
@@ -805,7 +894,8 @@ body {
       width: 300px;
       box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
       border-radius: 3px;
-      overflow: hidden; }
+      overflow: hidden;
+      background: #ffffff; }
       #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header {
         width: 100%;
         display: flex;
@@ -839,8 +929,6 @@ body {
           #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--closer i {
             font-size: 12px;
             line-height: 100%; }
-      #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--container {
-        background: #ffffff; }
     #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--switcher {
       width: 50px;
       height: 50px;
