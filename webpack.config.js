@@ -6,11 +6,11 @@ var extractPlugin = new ExtractTextPlugin({
 
 module.exports = {
     entry: {
-        //index: ["@babel/polyfill", "./bluish/src/index.js"],
-        canvas: ["@babel/polyfill", "./canvas.js"],
+        index: ["@babel/polyfill", "./bluish/src/index.js"],
+        //canvas: ["@babel/polyfill", "./canvas.js"],
     },
     output: {
-        path: path.resolve(__dirname, 'bluish/canvas'),
+        path: path.resolve(__dirname, 'bluish/docs'),
         filename: '[name].js'
         //publicPath: '/build'
     },

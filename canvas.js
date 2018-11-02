@@ -1,10 +1,11 @@
 import './canvas.scss';
 import TweenMax, { TimelineMax } from 'gsap/TweenMax';
 
-let EngineTimeline = new TimelineMax({repeat: -1});
-let regularCogsTimeline = new TimelineMax({repeat: -1});
-let wireCogsTimeline = new TimelineMax({repeat: -1});
+var EngineTimeline = new TimelineMax({repeat: -1});
+var regularCogsTimeline = new TimelineMax({repeat: -1});
+var wireCogsTimeline = new TimelineMax({repeat: -1});
 var clocksTimeline = new TimelineMax({repeat: -1});
+var machinaShake = new TimelineMax({repeat: -1});
 
 //engine
 var engineWheel = document.querySelector('#engine-wheel');
@@ -30,6 +31,20 @@ var regCog = document.querySelectorAll('.regular-cog');
 
 //wire-cogs
 var wireCogs = document.querySelectorAll('.wire-cog');
+
+//whole machina
+
+var machinaWhole = document.querySelector('#machina-whole');
+var machinaCar = document.querySelector('#machina-car');
+var machinaGround = document.querySelector('#machina-ground');
+var carWheels = document.querySelectorAll('.machina-car-wheel');
+
+//paper plane
+
+var paperPlane = document.querySelector('#paper-plane');
+var paperHand = document.querySelector('#paper-hand');
+var paperBox = document.querySelector('#paper-box');
+var paperContainer = document.querySelector('#paper-container');
 
 //engine
 
@@ -465,3 +480,243 @@ clocksTimeline.add(smallEngineTlokGo,9);
 clocksTimeline.add(smallEngineTlokGo,9.5);
 
 
+//machina whole
+
+//shake
+function machinaShakeStart() {
+    let tween = TweenMax.to(machinaWhole, 0.1, {
+        x: -2, 
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+        onComplete: ()=> {opositeShake(0, 2)}
+    });
+    return tween;
+}
+
+function opositeShake(count, dir) {
+    if(count >= 25){
+        return;
+    }
+    let tween = TweenMax.to(machinaWhole, 0.1, {
+        x: dir, 
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+        onComplete: ()=>{opositeShake(++count, -1*dir)}
+    });
+}
+
+//stand up
+function machinaStandUp() {
+    let tween = TweenMax.to(machinaWhole, 0.5, {
+        y: -10,
+        rotation: 1, 
+        transformOrigin:"100% 100%",
+        ease: Power1.easeInOut,
+        
+    });
+    return tween;
+}
+
+function opositeStand(){
+    let tween = TweenMax.to(machinaWhole, 0.5, {
+        y: -20,
+        rotation: -2, 
+        transformOrigin:"0 100%",
+        ease: Power1.easeInOut,
+        
+    });
+    return tween;
+}
+
+function constantStand(){
+    let tween = TweenMax.to(machinaWhole, 0.5, {
+        y: -30,
+        rotation: 0, 
+        transformOrigin:"50% 50%",
+        ease: Power1.easeInOut,
+    });
+    return tween;
+}
+
+//machina roll, car roll
+function machinaRollGo(machinaElemenet) {
+    let tween = TweenMax.to(machinaElemenet, 1, {
+        x: -30,
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+    });
+    return tween;
+}
+
+function machinaRollBack(machinaElemenet){
+    let tween = TweenMax.to(machinaElemenet, 1.5, {
+        x: 30,
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+    });
+    return tween;
+}
+
+function machinaRollFin(machinaElemenet){
+    let tween = TweenMax.to(machinaElemenet, 1, {
+        x: 0,
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+    });
+    return tween;
+}
+
+//car rotation
+
+function carWheelsGo(i) {
+    let tween = TweenMax.to(carWheels[i],1, {
+        rotation: -23,
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+        
+    });
+    return tween;
+}
+
+function carWheelsBack(i) {
+    let tween = TweenMax.to(carWheels[i],1.5, {
+        rotation: 23,
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+        
+    });
+    return tween;
+}
+
+function carWheelsFin(i) {
+    let tween = TweenMax.to(carWheels[i],1, {
+        rotation: 0,
+        transformOrigin:"50% 50%",
+        ease: Linear.easeNone,
+        
+    });
+    return tween;
+}
+
+//machina sit
+function machinaSitDown() {
+    let tween = TweenMax.to(machinaWhole, 0.5, {
+        y: 15,
+        x: 0,
+        rotation: -3,
+        transformOrigin:"0 100%",
+        ease: Back.easeInOut,
+    });
+    return tween;
+}
+
+function machinaFinalSitDown() {
+    let tween = TweenMax.to(machinaWhole, 0.5, {
+        y: 0,
+        x: 0,
+        rotation: 0,
+        transformOrigin:"0 100%",
+        ease: Back.easeInOut,
+    });
+    return tween;
+}
+
+//plane throw
+function paperContainerUp(){
+    let tween = TweenMax.to(paperContainer, 0.5, {
+        y: -150,
+        transformOrigin:"50% 50%",
+        ease: Back.easeInOut,
+        
+    });
+    return tween;
+}
+
+function paperContainerDown(){
+    let tween = TweenMax.to(paperContainer, 0.5, {
+        y: 0,
+        transformOrigin:"50% 50%",
+        ease: Back.easeInOut,
+        
+    });
+    return tween;
+}
+
+function paperBoxMotion(){
+    let tween = TweenMax.to(paperBox, 0.75, {
+        rotation: 360,
+        transformOrigin:"50% 100%",
+        ease: Back.easeInOut,
+        
+    });
+    return tween;
+}
+
+function paperPlaneGo(){
+    let tween = TweenMax.to(paperPlane, 1.5, {
+        x: 400,
+        y: -10,
+        rotation: -35,
+        transformOrigin:"50% 50%",
+        ease: Power1.easeInOut,
+        
+    });
+    return tween;
+}
+
+function paperPlaneGoFurther(){
+    let tween = TweenMax.to(paperPlane, 1, {
+        x: 600,
+        y: 30,
+        rotation: 20,
+        transformOrigin:"50% 50%",
+        ease: Power1.easeInOut,
+        
+    });
+    return tween;
+}
+
+function paperPlaneGoFin(){
+    let tween = TweenMax.to(paperPlane, 1, {
+        x: 700,
+        y: -10,
+        rotation: -20,
+        opacity: 0,
+        transformOrigin:"50% 50%",
+        ease: Power1.easeInOut,
+        
+    });
+    return tween;
+}
+
+
+
+machinaShake.add(machinaShakeStart(), 5);
+machinaShake.add(machinaStandUp(), 8.5);
+machinaShake.add(opositeStand(), 9);
+machinaShake.add(constantStand(), 9.5);
+machinaShake.add(machinaRollGo(machinaWhole), 10);
+machinaShake.add(machinaRollBack(machinaWhole), 11);
+machinaShake.add(machinaRollFin(machinaWhole), 12.5);
+machinaShake.add(machinaRollGo(machinaCar), 10);
+machinaShake.add(machinaRollBack(machinaCar), 11);
+machinaShake.add(machinaRollFin(machinaCar), 12.5);
+machinaShake.add(machinaSitDown(), 13.5);
+
+machinaShake.add(carWheelsGo(0), 10)
+machinaShake.add(carWheelsBack(0), 11)
+machinaShake.add(carWheelsFin(0), 12.5)
+
+machinaShake.add(carWheelsGo(1), 10)
+machinaShake.add(carWheelsBack(1), 11)
+machinaShake.add(carWheelsFin(1), 12.5)
+
+machinaShake.add(paperContainerUp(), 14);
+machinaShake.add(paperBoxMotion(), 14.5);
+machinaShake.add(paperPlaneGo(), 14.75);
+
+machinaShake.add(paperPlaneGoFurther(), 16.25);
+machinaShake.add(paperPlaneGoFin(), 17.25);
+machinaShake.add(paperContainerDown(), 18.25);
+
+machinaShake.add(machinaFinalSitDown(), 18.75);
