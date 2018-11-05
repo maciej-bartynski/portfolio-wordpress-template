@@ -85,6 +85,14 @@ body {
       font-size: 20px;
       line-height: 40px; } }
 
+.footer-item {
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0; }
+
 #navbar01 .menu-item-font {
   font-size: 13px; }
   @media screen and (min-width: 900px) {
@@ -822,7 +830,12 @@ body {
     letter-spacing: 1px;
     font-size: 12px;
     line-height: 12px;
-    margin: 15px auto 15px auto; }
+    margin: 15px auto 15px auto;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
     @media screen and (min-width: 900px) {
       #contact07 #contact07_contact--wrapper div#plugin-form .button {
         margin: 20px 0 20px 0; } }
@@ -923,6 +936,7 @@ body {
       cursor: pointer; } }
 
 #aboutme08 {
+  margin-bottom: 50px;
   padding: 0 40px;
   width: 100%; }
   @media screen and (min-width: 900px) {
@@ -996,8 +1010,14 @@ body {
     #aboutme08 .aboutme08-list_article .aboutme08-list_article_head .aboutme08-list_article_head_icon {
       width: 50px;
       height: 50px;
-      align-self: flex-start; }
+      align-self: flex-start;
+      cursor: pointer;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
     #aboutme08 .aboutme08-list_article .aboutme08-list_article_head .aboutme08-list_article_head_title-anim {
+      cursor: pointer;
       width: calc(100% - 50px);
       height: 100%;
       display: flex;
@@ -1032,6 +1052,148 @@ body {
       background: #0066ff;
       width: 0;
       height: 80%; }
+
+#footer09 {
+  border-top: solid 5px #0066ff;
+  width: 100%;
+  margin: 0;
+  margin-top: 200px;
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  @media screen and (min-width: 900px) {
+    #footer09 {
+      padding: 0 5%; } }
+  @media screen and (min-width: 1200px) {
+    #footer09 {
+      padding: 0 8%; } }
+  @media screen and (min-width: 1500px) {
+    #footer09 {
+      padding: 0 140px; } }
+  @media screen and (min-width: 1200px) {
+    #footer09 {
+      padding-left: 25%; } }
+  #footer09 .footer09_get-cv {
+    margin: 50px 0 0 0;
+    display: inline-block;
+    width: 100%;
+    color: #808080; }
+    #footer09 .footer09_get-cv a {
+      color: #0066ff;
+      cursor: pointer;
+      text-decoration: none; }
+      #footer09 .footer09_get-cv a:visited, #footer09 .footer09_get-cv a:active {
+        color: #0066ff;
+        text-decoration: none; }
+      #footer09 .footer09_get-cv a:hover {
+        color: #5498FF;
+        text-decoration: none; }
+
+#footer09 .footer09_navi--container,
+#footer09 .footer09_socialnavi--container,
+#footer09 .footer09_info--container {
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  list-style: none; }
+  @media screen and (min-width: 500px) {
+    #footer09 .footer09_navi--container,
+    #footer09 .footer09_socialnavi--container,
+    #footer09 .footer09_info--container {
+      width: 50%; } }
+  @media screen and (min-width: 900px) {
+    #footer09 .footer09_navi--container,
+    #footer09 .footer09_socialnavi--container,
+    #footer09 .footer09_info--container {
+      width: 25%; } }
+
+#footer09 .footer09_navi--item,
+#footer09 .footer09_socialnavi--item,
+#footer09 .footer09_info--item {
+  color: #0066ff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  margin: 5px 0;
+  padding: 0;
+  list-style: none;
+  text-align: center; }
+  @media screen and (min-width: 500px) {
+    #footer09 .footer09_navi--item,
+    #footer09 .footer09_socialnavi--item,
+    #footer09 .footer09_info--item {
+      justify-content: flex-start;
+      text-align: left; } }
+  #footer09 .footer09_navi--item a,
+  #footer09 .footer09_socialnavi--item a,
+  #footer09 .footer09_info--item a {
+    text-decoration: none;
+    cursor: pointer; }
+    #footer09 .footer09_navi--item a:visited, #footer09 .footer09_navi--item a:active,
+    #footer09 .footer09_socialnavi--item a:visited,
+    #footer09 .footer09_socialnavi--item a:active,
+    #footer09 .footer09_info--item a:visited,
+    #footer09 .footer09_info--item a:active {
+      color: #0066ff;
+      text-decoration: none; }
+    #footer09 .footer09_navi--item a:hover,
+    #footer09 .footer09_socialnavi--item a:hover,
+    #footer09 .footer09_info--item a:hover {
+      color: #5498FF;
+      text-decoration: none; }
+
+#footer09 .footer09_foot {
+  display: inline-block;
+  width: 100%;
+  color: #0066ff;
+  text-align: center;
+  margin: 7px 0;
+  margin-left: -16.665%;
+  color: #808080;
+  font-size: 15px; }
+
+#train00 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 110; }
+
+#train00_track {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  left: 28px;
+  background: #0066ff;
+  z-index: 111; }
+
+#train00_car {
+  position: absolute;
+  top: 110px;
+  left: 10px;
+  width: 40px;
+  height: 50px;
+  background: #0066ff;
+  z-index: 112;
+  border-radius: 3px; }
+
+#train00_car svg.train--container {
+  width: 100%;
+  height: 100%; }
+  #train00_car svg.train--container #temporary-engine-wheel {
+    width: 90%; }
 
 .personal-panel--component {
   width: 341px;
@@ -1909,4 +2071,5 @@ body {
   box-sizing: border-box; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  position: relative; }
