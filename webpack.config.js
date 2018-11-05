@@ -8,6 +8,7 @@ module.exports = {
     entry: {
         home: ["@babel/polyfill", "./bluish/src/index.js"],
         hero: ["@babel/polyfill", "./bluish/src/hero-animation.js"],
+        kary: ["@babel/polyfill", "./bluish/src/scripts/aboutme.js"],
     },
     output: {
         path: path.resolve(__dirname, 'bluish/docs'),

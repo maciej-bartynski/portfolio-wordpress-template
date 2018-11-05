@@ -1,5 +1,8 @@
+//general
 @import './scss/vars.scss';
 @import './scss/typo.scss';
+
+//sections
 @import './scss/sections/navbar.scss';
 @import './scss/sections/header.scss';
 @import './scss/sections/portfolio.scss';
@@ -7,6 +10,7 @@
 @import './scss/sections/searchfor.scss';
 @import './scss/sections/questions.scss';
 @import './scss/sections/contact.scss';
+@import './scss/sections/aboutme.scss';
 
 //components
 @import './scss/components/personal-panel.scss';

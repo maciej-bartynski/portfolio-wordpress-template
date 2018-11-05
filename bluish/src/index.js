@@ -8,7 +8,11 @@ import './scripts/slider-tools.js';
 import './scripts/sectionslide-tools.js';
 import './scripts/questions.js';
 import './scripts/contact.js';
+import './scripts/aboutme.js';
 import {MobileMenu} from './scripts/navbar.js';
+
+//animations
+import './karynka.js';
 
 $(document).ready(function () { 
     var fixedMenu = new MobileMenu;

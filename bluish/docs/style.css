@@ -71,6 +71,20 @@ body {
       font-size: 14px;
       line-height: 20px; } }
 
+.sans-inner-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  color: #0066ff;
+  font-weight: 400;
+  margin: 0;
+  padding: 0; }
+  @media screen and (min-width: 900px) {
+    .sans-inner-title {
+      font-size: 20px;
+      line-height: 40px; } }
+
 #navbar01 .menu-item-font {
   font-size: 13px; }
   @media screen and (min-width: 900px) {
@@ -718,41 +732,9 @@ body {
           #questions06 .question--wrapper .question_answer--wrapper p.paragraph:nth-of-type(3) {
             order: 3; } }
 
-/*
-<section id="questions06">
-            <h2 class="section-title searchfor05--title">Szybka rekrutacja</h2>
-            <p class="questions06_excerpt">
-                Lorem ipsum sit dolor amet et plural singular et colaborantiam est.
-            </p>
-            <ul class="questions06_list">
-                <li class="questions06_list--item">
-
-                    <article class="question--wrapper">
-                        <header class="question--head">
-                            <h3 class="inner-title question--title">Zadanie!</h3>
-                            <i class="fas fa-home"></i>
-                        </header>
-                        <div class="question_answer--wrapper">
-                            <p>Jakiś tekxt, odpowiedź, coś tam, tu tego, rozumisz</p>
-                            <p>
-                                <img src="./bluish/media/kompas.svg" alt="">
-                                Jakiś tekxt, odpowiedź, coś tam, tu tego, rozumisz, druga kolumna,
-                                co nie, i tak dalej, tu tego tam, coś, ja coś, ty coś, ktoś coś.
-                            </p>
-                            <p>Jakiś tekxt, odpowiedź, coś tam, tu tego, rozumisz, druga kolumna,
-                                co nie, i tak dalej, tu tego tam, coś, ja coś, ty coś, ktoś coś.
-                                Jakiś tekxt, odpowiedź, coś tam, tu tego, rozumisz, druga kolumna,
-                                co nie, i tak dalej, tu tego tam, coś, ja coś, ty coś, ktoś coś.
-                            </p>
-                        </div>
-                    </article>
-
-                </li>
-            </ul>
-        </section>
-        */
 #contact07 {
-  padding: 0 40px; }
+  padding: 0 40px;
+  margin-bottom: 50px; }
   @media screen and (min-width: 900px) {
     #contact07 {
       padding: 0 5%; } }
@@ -939,6 +921,117 @@ body {
       align-items: center;
       box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
       cursor: pointer; } }
+
+#aboutme08 {
+  padding: 0 40px;
+  width: 100%; }
+  @media screen and (min-width: 900px) {
+    #aboutme08 {
+      padding: 0 5%; } }
+  @media screen and (min-width: 1200px) {
+    #aboutme08 {
+      padding: 0 8%; } }
+  @media screen and (min-width: 1500px) {
+    #aboutme08 {
+      padding: 0 140px; } }
+  #aboutme08 .aboutme08-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%; }
+    @media screen and (min-width: 900px) {
+      #aboutme08 .aboutme08-title {
+        justify-content: flex-start; } }
+  #aboutme08 .aboutme08_excerpt {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px; }
+    @media screen and (min-width: 600px) {
+      #aboutme08 .aboutme08_excerpt {
+        margin-bottom: 30px; } }
+
+#aboutme08 .aboutme08-list--container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
+  #aboutme08 .aboutme08-list--container .aboutme08-list--item {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    display: block;
+    width: 100%;
+    max-width: 1000px; }
+
+#aboutme08 .aboutme08-list--item:nth-of-type(even) .aboutme08-list_article_head,
+#aboutme08 .aboutme08-list--item:nth-of-type(even) .aboutme08-list_article_hline--container,
+#aboutme08 .aboutme08-list--item:nth-of-type(even) .aboutme08-list_article_body {
+  align-self: flex-start; }
+
+#aboutme08 .aboutme08-list--item:nth-of-type(odd) .aboutme08-list_article_head,
+#aboutme08 .aboutme08-list--item:nth-of-type(odd) .aboutme08-list_article_hline--container,
+#aboutme08 .aboutme08-list--item:nth-of-type(odd) .aboutme08-list_article_body {
+  align-self: flex-end; }
+
+#aboutme08 .aboutme08-list_article {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  #aboutme08 .aboutme08-list_article .aboutme08-list_article_head {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0; }
+    #aboutme08 .aboutme08-list_article .aboutme08-list_article_head .aboutme08-list_article_head_title {
+      display: none; }
+    #aboutme08 .aboutme08-list_article .aboutme08-list_article_head .aboutme08-list_article_head_icon {
+      width: 50px;
+      height: 50px;
+      align-self: flex-start; }
+    #aboutme08 .aboutme08-list_article .aboutme08-list_article_head .aboutme08-list_article_head_title-anim {
+      width: calc(100% - 50px);
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 0 0 1%; }
+      #aboutme08 .aboutme08-list_article .aboutme08-list_article_head .aboutme08-list_article_head_title-anim .single-letter {
+        color: #5498FF;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif; }
+  #aboutme08 .aboutme08-list_article .aboutme08-list_article_body {
+    width: 100%;
+    max-width: 500px;
+    display: none; }
+    #aboutme08 .aboutme08-list_article .aboutme08-list_article_body .aboutme08-list_article_body--item {
+      display: block;
+      padding: 5px 5px 5px 50px;
+      margin: 0;
+      width: 100%; }
+  #aboutme08 .aboutme08-list_article .aboutme08-list_article_hline--container {
+    margin-top: 5px;
+    margin-left: 50px;
+    height: 5px;
+    width: calc(100% - 50px);
+    max-width: 450px;
+    display: flex;
+    justify-content: flex-start;
+    background: #909090;
+    align-items: center; }
+    #aboutme08 .aboutme08-list_article .aboutme08-list_article_hline--container .aboutme08-list_article_hline--item {
+      background: #0066ff;
+      width: 0;
+      height: 80%; }
 
 .personal-panel--component {
   width: 341px;
