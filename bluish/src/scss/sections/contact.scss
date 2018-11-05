@@ -77,6 +77,8 @@
         font-size: 12px;
         line-height: 12px;
         margin: 15px auto 15px auto;
+        cursor: pointer;
+        user-select: none;
         @media screen and (min-width: 900px){
             margin: 20px 0 20px 0;
         }

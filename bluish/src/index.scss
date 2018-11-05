@@ -11,8 +11,10 @@
 @import './scss/sections/questions.scss';
 @import './scss/sections/contact.scss';
 @import './scss/sections/aboutme.scss';
+@import './scss/sections/footer.scss';
 
 //components
+@import './scss/components/train.scss';
 @import './scss/components/personal-panel.scss';
 @import './scss/components/svg-animation.scss';
 @import './scss/components/slider100vw/project-slider.scss';
@@ -26,4 +28,5 @@
 
 body {
     margin: 0;
+    position: relative;
 }

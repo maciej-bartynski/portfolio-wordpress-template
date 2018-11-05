@@ -2,6 +2,7 @@ import './index.scss';
 
 import $ from 'jquery';
 
+import './scripts/train-anim.js';
 import './scripts/animatable-bg.js';
 import './scripts/slider-portfolio.js';
 import './scripts/slider-tools.js';

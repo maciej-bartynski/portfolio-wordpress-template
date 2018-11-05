@@ -1,4 +1,5 @@
 #aboutme08{
+    margin-bottom: 50px;
     @include navi-margin;
     width: 100%;
     .aboutme08-title {
@@ -71,7 +72,6 @@
         //header
         .aboutme08-list_article_head {
             width: 100%;
-            //height: 50px;
             max-width: 500px;
             display: flex;
             flex-direction: row;
@@ -84,10 +84,13 @@
             }
             .aboutme08-list_article_head_icon {
                 width: 50px;
-                height: 50px;//100%;
+                height: 50px;
                 align-self: flex-start;
+                cursor: pointer;
+                user-select: none;
             }
             .aboutme08-list_article_head_title-anim{
+                cursor: pointer;
                 width: calc(100% - 50px);
                 height: 100%;
                 display: flex;

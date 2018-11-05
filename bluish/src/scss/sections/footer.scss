@@ -1,0 +1,106 @@
+#footer09 {
+    border-top: solid 5px $blue;
+    width: 100%;
+    margin:0;
+    margin-top: 200px;
+    @include navi-margin;
+    @media screen and (min-width: 1200px){
+        padding-left: 25%;
+    };
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .footer09_get-cv {
+        margin: 50px 0 0 0;
+        display: inline-block;
+        width: 100%;
+        color: $textgray;
+        a {
+            color: $blue;
+            cursor: pointer;
+            text-decoration: none;
+            &:visited,
+            &:active {
+                color: $blue;
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $lightblue;
+                text-decoration: none;
+            }
+        }
+    }
+};
+
+#footer09 {
+    .footer09_navi--container,
+    .footer09_socialnavi--container,
+    .footer09_info--container {
+        margin: 50px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        list-style: none;
+        @media screen and (min-width: 500px) {
+            width: 50%;
+        }
+        @media screen and (min-width: 900px){
+            width: 25%;
+        }
+    }
+}
+
+#footer09 {
+    .footer09_navi--item,
+    .footer09_socialnavi--item,
+    .footer09_info--item {
+        color: $blue;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        word-wrap: break-word;
+        margin: 5px 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        @media screen and (min-width: 500px) {
+            justify-content: flex-start;
+            text-align: left;
+        }
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            &:visited, &:active {
+                color: $blue;
+                text-decoration: none;
+            }
+            &:hover {
+                color: $lightblue;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#footer09 {
+    .footer09_foot{
+        display: inline-block;
+        width: 100%;
+        color: $blue;
+        text-align: center;
+        margin: 7px 0;
+        margin-left: -16.665%;
+        color: $textgray;
+        font-size: 15px;
+    }
+}
+
+
+
