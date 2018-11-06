@@ -110,8 +110,8 @@ class TrainAnimation {
                 }
             );
         }
-        this.cog.add(xcog(90),0);
-        this.cog.add(xcog(-90),0.125);
+        this.cog.add(xcog(45),0);
+        this.cog.add(xcog(-45),0.125);
         this.cog.add(xcog(0),0.375);
         let xcorb = (deg) => {
             return TweenMax.to(
@@ -124,8 +124,8 @@ class TrainAnimation {
                 }
             );
         }
-        this.corb.add(xcorb(90), 0);
-        this.corb.add(xcorb(-90), 0.125);
+        this.corb.add(xcorb(45), 0);
+        this.corb.add(xcorb(-45), 0.125);
         this.corb.add(xcorb(0), 0.375);
     }
 
