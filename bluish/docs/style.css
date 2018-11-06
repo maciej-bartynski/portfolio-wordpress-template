@@ -1195,6 +1195,9 @@ body {
   width: 40px;
   z-index: 100;
   overflow: hidden; }
+  @media screen and (max-width: 760px) {
+    #train00 {
+      display: none; } }
 
 #train00_track {
   position: absolute;
