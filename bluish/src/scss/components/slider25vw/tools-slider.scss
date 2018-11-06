@@ -52,6 +52,7 @@
         width: 30px;
         height: 30px;
         padding: 1px;
+        user-select: none;
     }
 
     .slideswitch-cog {
@@ -61,6 +62,7 @@
         animation-duration: 5000ms;
         animation-fill-mode: forwards;
         animation-timing-function: linear;
+        user-select: none;
         &.cog-is-animated{
             animation-name: rotate-switcher-cog;
         }

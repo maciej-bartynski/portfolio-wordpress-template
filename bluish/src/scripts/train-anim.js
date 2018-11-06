@@ -2,85 +2,372 @@ import jquery from 'jquery';
 import TweenMax, {
     TimelineMax
 } from 'gsap/TweenMax';
+import zenscroll from 'zenscroll';
 
 class TrainAnimation {
     constructor() {
+        this.isPlayed=false;
+        this.directionController=1;
+        this.positionInMoment = 0;
+
+        this.container = jquery('#train00');
         this.train = jquery('#train00_car');
-        this.track = jquery('#train00');
-        this.travel = new TimelineMax({repeat: 0});
-        this.position = 200;
-        this.controller = 1;
-        this.repeat=this.repeat.bind(this);
-        this.starter=this.starter.bind(this);
-        this.paused = null;
-        this.starter();
-        this.hoverDispatcher();
-        this.leaveDispatcher();
-    }
+        this.track = jquery('#train00_track');
 
-    hoverDispatcher(){
-        this.track.mouseover((e) => {
-            let pos = e.clientY + window.pageYOffset;
-            let car = document.querySelector('#train00_car');
-            let carTop = car.offsetTop;
-            let carBot = carTop + car.offsetHeight;
-            if (pos > carBot + 10 && this.controller === 1){
-                this.paused = true;
-                this.travel.pause();
-            } else if (pos < carTop - 10 && this.controller === -1){
-                this.paused = true;
-                this.travel.pause();
+        this.printCar();
+
+        this.corbEl = jquery('.train-corb');
+        this.cogEl = jquery('.train-cog');
+        this.leftWheels = document.querySelectorAll('.train-left-wheel');
+        this.rightWheels = document.querySelectorAll('.train-right-wheel');
+
+        this.wheelA = new TimelineMax({repeat: -1});
+        this.wheelB = new TimelineMax({repeat: -1});
+        this.wheelC = new TimelineMax({repeat: -1});
+        this.wheelD = new TimelineMax({repeat: -1});
+        this.wheelA.pause(true);
+        this.wheelB.pause(true);
+        this.wheelC.pause(true);
+        this.wheelD.pause(true);
+        this.cog = new TimelineMax({repeat: -1});
+        this.corb = new TimelineMax({repeat: -1});
+        this.cog.pause(true);
+        this.corb.pause(true);
+
+        this.moveWheelsPrepare();
+        this.moveCorbPrepare();
+
+        this.clickDispatcher();
+        this.scrollDispatcher();
+    }
+    //events
+    clickDispatcher() {
+        this.train.click((e)=>{
+            if(!this.isPlayed) {
+                this.trainMove();
+                this.whereUserIs();
             }
         });
     }
 
-    leaveDispatcher(){
-        this.track.mouseleave((e) => {
-            if (this.paused) {
-                this.paused=false;
-                this.travel.resume();
-            }
+    scrollDispatcher() {
+        jquery(window).scroll((e)=>{
+            this.detectDirection(e);
+            if(!this.isPlayed) this.trainMove();
         });
     }
 
-    repeat(){
-        let border = document.querySelector('#footer09').offsetTop;
-        this.travel = new TimelineMax({repeat: 0});
-        if (border<=this.position+300){
-           this.controller = -1;
-        } else if (this.position<=600) {
-            this.controller = 1;
-        }
-        if (this.controller === -1) {
-            this.position -= 300;
-        } else if (this.controller === 1) {
-            this.position += 300;
-        }
-        this.starter();
+    //methods
+
+    trainMove(){
+        this.isPlayed=true;
+        this.wheelA.play();
+        this.wheelB.play();
+        this.wheelC.play();
+        this.wheelD.play();
+        this.corb.play();
+        this.cog.play();
+        this.track.addClass('godown');
+        setTimeout(()=>{
+            this.corb.pause(true);
+            this.cog.pause(true);
+            this.wheelA.pause(true);
+            this.wheelB.pause(true);
+            this.wheelC.pause(true);
+            this.wheelD.pause(true);
+            this.track.removeClass('godown');
+            this.isPlayed=false;
+        },1000)
     }
 
-    starter(){
-        this.travel.add(
-            TweenMax.to(
-                this.train,
-                1,
+    moveWheelsPrepare() {
+        let wheels = (el, dir) => {
+            return TweenMax.to(
+                el,
+                0.1,
                 {
-                    top: this.position+(300*this.controller),
-                    ease: Linear.easeOut,
-                    onComplete: ()=>{
-                        this.repeat();
-                    }
+                    rotation: 360*dir,
+                    ease: Linear.easeNone,
+                    transformOrigin: '50% 50%',
                 }
-            )
-        )
-        this.travel.play();
+            );
+        }
+        this.wheelA.add(wheels(this.rightWheels[0], 1),0);
+        this.wheelB.add(wheels(this.rightWheels[1], 1),0);
+        this.wheelC.add(wheels(this.leftWheels[0], -1),0);
+        this.wheelD.add(wheels(this.leftWheels[1], -1),0);
+    }
+
+    moveCorbPrepare(){
+        let xcog = (deg) => {
+            return TweenMax.to(
+                this.cogEl,
+                0.125,
+                {
+                    rotation: deg,
+                    ease: Linear.easeNone,
+                    transformOrigin: '50% 50%',
+                }
+            );
+        }
+        this.cog.add(xcog(90),0);
+        this.cog.add(xcog(-90),0.125);
+        this.cog.add(xcog(0),0.375);
+        let xcorb = (deg) => {
+            return TweenMax.to(
+                this.corbEl,
+                0.125,
+                {
+                    rotation: deg,
+                    ease: Linear.easeNone,
+                    transformOrigin: '0% 50%',
+                }
+            );
+        }
+        this.corb.add(xcorb(90), 0);
+        this.corb.add(xcorb(-90), 0.125);
+        this.corb.add(xcorb(0), 0.375);
+    }
+
+    //dir
+    detectDirection(e){
+        if (this.positionInMoment - window.pageYOffset < 0){
+            this.directionController=1;
+        } else if (this.positionInMoment - window.pageYOffset > 0) {
+            this.directionController=-1;
+        }
+        this.positionInMoment = window.pageYOffset;
+    }
+
+    //selectors
+    whereUserIs(){
+        let stages = document.querySelectorAll('.scrolling-stage');
+        for (let i=0;i<stages.length;i++){
+
+            let borderTop = stages[i].offsetTop - (window.innerHeight/10);
+            let borderBottom;
+
+            if (i+1===stages.length){
+                borderBottom = borderTop+2000;
+            } else {
+                borderBottom =  stages[i+1].offsetTop - (window.innerHeight/10);
+            }
+
+            if( borderBottom > window.pageYOffset &&
+                borderTop <= window.pageYOffset){
+                
+                if (i===stages.length-1) {
+                    this.directionController=(-1);
+                } else if(i===0) {
+                    this.directionController=1;
+                }
+
+                zenscroll.toY(stages[i+this.directionController].offsetTop - 60, 900)
+                break;
+            }
+        }
+    }
+
+    //print
+    printCar(){
+        this.train.html(`<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="40.999px" height="101px" viewBox="0 0 40.999 101" enable-background="new 0 0 40.999 101" xml:space="preserve">
+   <g>
+       <g>
+           <path fill="#0066FF" stroke="#FFFFFF" stroke-width="0.5" d="M12.688,77.985c-1.015,0-1.837-0.822-1.837-1.838V36.448
+               c0-1.016,0.822-1.838,1.837-1.838l0,0c1.015,0,1.837,0.822,1.837,1.838v39.699C14.524,77.163,13.702,77.985,12.688,77.985
+               L12.688,77.985z"/>
+           <path fill="#0066FF" stroke="#FFFFFF" stroke-width="0.5" d="M12.688,39.073c-1.42,0-2.572-1.151-2.572-2.572l0,0
+               c0-1.422,1.152-2.572,2.572-2.572l0,0c1.421,0,2.572,1.15,2.572,2.572l0,0C15.26,37.921,14.108,39.073,12.688,39.073
+               L12.688,39.073z"/>
+       </g>
+       <path fill="#0066FF" stroke="#FFFFFF" stroke-width="0.5" d="M12.688,78.573c-1.42,0-2.572-1.151-2.572-2.572l0,0
+           c0-1.422,1.152-2.572,2.572-2.572l0,0c1.421,0,2.572,1.15,2.572,2.572l0,0C15.26,77.421,14.108,78.573,12.688,78.573L12.688,78.573
+           z"/>
+   </g>
+   <g class="train-right-wheel">
+       <g>
+           <g>
+               <path fill="#0066FF" d="M37.813,66.483c-3.584-3.584-9.395-3.584-12.979-0.001c-3.582,3.583-3.582,9.395,0.002,12.979
+                   c3.584,3.583,9.393,3.583,12.977,0C41.395,75.876,41.395,70.066,37.813,66.483z M35.816,77.463
+                   c-2.48,2.481-6.504,2.482-8.984,0.001c-2.482-2.481-2.48-6.504,0-8.985s6.504-2.481,8.984,0
+                   C38.299,70.96,38.297,74.983,35.816,77.463z"/>
+           </g>
+           <g>
+               <path fill="none" stroke="#FFFFFF" d="M37.813,66.483c-3.584-3.584-9.395-3.584-12.979-0.001
+                   c-3.582,3.583-3.582,9.395,0.002,12.979c3.584,3.583,9.393,3.583,12.977,0C41.395,75.876,41.395,70.066,37.813,66.483z
+                    M35.816,77.463c-2.48,2.481-6.504,2.482-8.984,0.001c-2.482-2.481-2.48-6.504,0-8.985s6.504-2.481,8.984,0
+                   C38.299,70.96,38.297,74.983,35.816,77.463z"/>
+           </g>
+       </g>
+       <g>
+           
+               <rect x="30.454" y="64.347" transform="matrix(-0.7068 0.7074 -0.7074 -0.7068 105.0835 102.39)" fill="#0066FF" width="1.741" height="17.247"/>
+           
+               <rect x="30.454" y="64.347" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 1.8757 146.7184)" fill="#0066FF" width="1.74" height="17.247"/>
+       </g>
+       <g>
+           <rect x="30.453" y="64.348" fill="#0066FF" width="1.742" height="17.245"/>
+           <rect x="22.701" y="72.1" fill="#0066FF" width="17.246" height="1.741"/>
+       </g>
+       <circle fill="#0066FF" cx="31.324" cy="72.971" r="4.035"/>
+   </g>
+   <g class="train-right-wheel">
+       <g>
+           <g>
+               <path fill="#0066FF" d="M37.812,21.541c-3.584-3.584-9.394-3.584-12.978-0.001c-3.582,3.583-3.582,9.395,0.002,12.979
+                   c3.583,3.583,9.392,3.583,12.976,0C41.395,30.934,41.395,25.124,37.812,21.541z M35.815,32.521
+                   c-2.48,2.481-6.503,2.482-8.983,0.001c-2.482-2.481-2.481-6.504,0-8.985c2.48-2.481,6.503-2.481,8.983,0
+                   C38.298,26.018,38.296,30.041,35.815,32.521z"/>
+           </g>
+           <g>
+               <path fill="none" stroke="#FFFFFF" d="M37.812,21.541c-3.584-3.584-9.394-3.584-12.978-0.001
+                   c-3.582,3.583-3.582,9.395,0.002,12.979c3.583,3.583,9.392,3.583,12.976,0C41.395,30.934,41.395,25.124,37.812,21.541z
+                    M35.815,32.521c-2.48,2.481-6.503,2.482-8.983,0.001c-2.482-2.481-2.481-6.504,0-8.985c2.48-2.481,6.503-2.481,8.983,0
+                   C38.298,26.018,38.296,30.041,35.815,32.521z"/>
+           </g>
+       </g>
+       <g>
+           
+               <rect x="30.453" y="19.405" transform="matrix(-0.7068 0.7074 -0.7074 -0.7068 73.291 25.6815)" fill="#0066FF" width="1.741" height="17.246"/>
+           
+               <rect x="30.454" y="19.405" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 33.6539 69.9966)" fill="#0066FF" width="1.74" height="17.247"/>
+       </g>
+       <g>
+           <rect x="30.454" y="19.406" fill="#0066FF" width="1.741" height="17.245"/>
+           <rect x="22.7" y="27.158" fill="#0066FF" width="17.246" height="1.741"/>
+       </g>
+       <circle fill="#0066FF" cx="31.324" cy="28.028" r="4.035"/>
+   </g>
+   <g class="train-left-wheel">
+       <g>
+           <g>
+               <path fill="#0066FF" d="M16.165,3.188C12.581-0.396,6.771-0.396,3.187,3.187c-3.582,3.583-3.582,9.395,0.002,12.979
+                   c3.583,3.583,9.392,3.583,12.976,0C19.748,12.582,19.748,6.771,16.165,3.188z M14.168,14.168
+                   c-2.48,2.481-6.503,2.482-8.983,0.001c-2.482-2.481-2.481-6.504,0-8.985c2.48-2.481,6.503-2.481,8.983,0
+                   C16.651,7.666,16.649,11.688,14.168,14.168z"/>
+           </g>
+           <g>
+               <path fill="none" stroke="#FFFFFF" d="M16.165,3.188C12.581-0.396,6.771-0.396,3.187,3.187
+                   c-3.582,3.583-3.582,9.395,0.002,12.979c3.583,3.583,9.392,3.583,12.976,0C19.748,12.582,19.748,6.771,16.165,3.188z
+                    M14.168,14.168c-2.48,2.481-6.503,2.482-8.983,0.001c-2.482-2.481-2.481-6.504,0-8.985c2.48-2.481,6.503-2.481,8.983,0
+                   C16.651,7.666,16.649,11.688,14.168,14.168z"/>
+           </g>
+       </g>
+       <g>
+           
+               <rect x="8.807" y="1.053" transform="matrix(-0.7068 0.7074 -0.7074 -0.7068 23.3615 9.6695)" fill="#0066FF" width="1.741" height="17.246"/>
+           
+               <rect x="8.807" y="1.052" transform="matrix(-0.7072 -0.707 0.707 -0.7072 9.6802 23.3601)" fill="#0066FF" width="1.74" height="17.247"/>
+       </g>
+       <g>
+           <rect x="8.807" y="1.053" fill="#0066FF" width="1.741" height="17.245"/>
+           <rect x="1.053" y="8.805" fill="#0066FF" width="17.247" height="1.741"/>
+       </g>
+       <circle fill="#0066FF" cx="9.677" cy="9.676" r="4.035"/>
+   </g>
+   <g class="train-left-wheel">
+       <g>
+           <g>
+               <path fill="#0066FF" d="M16.164,84.835c-3.584-3.584-9.394-3.584-12.978-0.001c-3.582,3.583-3.582,9.395,0.002,12.979
+                   c3.583,3.583,9.392,3.583,12.976,0C19.747,94.229,19.747,88.418,16.164,84.835z M14.168,95.816
+                   c-2.48,2.481-6.503,2.482-8.983,0.001c-2.482-2.481-2.481-6.504,0-8.985c2.48-2.481,6.503-2.481,8.983,0
+                   C16.65,89.313,16.648,93.335,14.168,95.816z"/>
+           </g>
+           <g>
+               <path fill="none" stroke="#FFFFFF" d="M16.164,84.835c-3.584-3.584-9.394-3.584-12.978-0.001
+                   c-3.582,3.583-3.582,9.395,0.002,12.979c3.583,3.583,9.392,3.583,12.976,0C19.747,94.229,19.747,88.418,16.164,84.835z
+                    M14.168,95.816c-2.48,2.481-6.503,2.482-8.983,0.001c-2.482-2.481-2.481-6.504,0-8.985c2.48-2.481,6.503-2.481,8.983,0
+                   C16.65,89.313,16.648,93.335,14.168,95.816z"/>
+           </g>
+       </g>
+       <g>
+           
+               <rect x="8.806" y="82.7" transform="matrix(-0.7068 0.7074 -0.7074 -0.7068 81.1166 149.028)" fill="#0066FF" width="1.741" height="17.246"/>
+           
+               <rect x="8.806" y="82.7" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 -48.0569 162.7407)" fill="#0066FF" width="1.74" height="17.247"/>
+       </g>
+       <g>
+           <rect x="8.806" y="82.701" fill="#0066FF" width="1.741" height="17.245"/>
+           <rect x="1.053" y="90.453" fill="#0066FF" width="17.246" height="1.741"/>
+       </g>
+       <circle fill="#0066FF" cx="9.676" cy="91.323" r="4.035"/>
+   </g>
+   <g>
+       <g>
+           <path fill="#0066FF" d="M33.909,27.204c-0.154-0.506-0.442-0.978-0.872-1.349c-0.744-0.642-1.72-0.835-2.605-0.613L12.702,9.941
+               c0.09-0.909-0.244-1.846-0.988-2.488c-1.215-1.048-3.049-0.914-4.098,0.302c-1.047,1.214-0.913,3.048,0.302,4.097
+               c0.744,0.642,1.72,0.835,2.606,0.613l17.729,15.3c-0.038,0.389,0.017,0.779,0.133,1.153L11.85,45.454
+               c-0.899-0.156-1.858,0.109-2.553,0.804c-1.134,1.134-1.135,2.973,0,4.108c1.134,1.134,2.974,1.134,4.108-0.001
+               c0.695-0.695,0.96-1.655,0.803-2.555l16.559-16.559c0.9,0.157,1.859-0.108,2.555-0.803C34.2,29.57,34.391,28.272,33.909,27.204z"
+               />
+       </g>
+       <g>
+           <path fill="none" stroke="#FFFFFF" stroke-width="0.7802" d="M33.909,27.204c-0.154-0.506-0.442-0.978-0.872-1.349
+               c-0.744-0.642-1.72-0.835-2.605-0.613L12.702,9.941c0.09-0.909-0.244-1.846-0.988-2.488c-1.215-1.048-3.049-0.914-4.098,0.302
+               c-1.047,1.214-0.913,3.048,0.302,4.097c0.744,0.642,1.72,0.835,2.606,0.613l17.729,15.3c-0.038,0.389,0.017,0.779,0.133,1.153
+               L11.85,45.454c-0.899-0.156-1.858,0.109-2.553,0.804c-1.134,1.134-1.135,2.973,0,4.108c1.134,1.134,2.974,1.134,4.108-0.001
+               c0.695-0.695,0.96-1.655,0.803-2.555l16.559-16.559c0.9,0.157,1.859-0.108,2.555-0.803C34.2,29.57,34.391,28.272,33.909,27.204z"
+               />
+       </g>
+   </g>
+   <g>
+       <g>
+           <path fill="#0066FF" d="M33.156,71.091c-0.546-0.546-1.255-0.816-1.971-0.836c-0.197-0.015-0.396-0.006-0.594,0.021l-16.549-16.55
+               c0.156-0.899-0.109-1.857-0.804-2.552c-1.134-1.135-2.973-1.136-4.108-0.001c-1.134,1.134-1.134,2.974,0.001,4.108
+               c0.695,0.695,1.655,0.96,2.555,0.803l16.465,16.467c-0.062,0.293-0.095,0.592-0.065,0.891l-17.729,15.3
+               c-0.886-0.222-1.862-0.028-2.606,0.613c-1.215,1.049-1.351,2.884-0.301,4.099c1.048,1.214,2.882,1.349,4.097,0.301
+               c0.744-0.643,1.078-1.58,0.988-2.488l17.73-15.302c0.251,0.063,0.508,0.083,0.767,0.079c0.767,0.019,1.539-0.26,2.124-0.845
+               C34.291,74.064,34.291,72.225,33.156,71.091z"/>
+       </g>
+       <g>
+           <path fill="none" stroke="#FFFFFF" stroke-width="0.7802" d="M33.156,71.091c-0.546-0.546-1.255-0.816-1.971-0.836
+               c-0.197-0.015-0.396-0.006-0.594,0.021l-16.549-16.55c0.156-0.899-0.109-1.857-0.804-2.552c-1.134-1.135-2.973-1.136-4.108-0.001
+               c-1.134,1.134-1.134,2.974,0.001,4.108c0.695,0.695,1.655,0.96,2.555,0.803l16.465,16.467c-0.062,0.293-0.095,0.592-0.065,0.891
+               l-17.729,15.3c-0.886-0.222-1.862-0.028-2.606,0.613c-1.215,1.049-1.351,2.884-0.301,4.099c1.048,1.214,2.882,1.349,4.097,0.301
+               c0.744-0.643,1.078-1.58,0.988-2.488l17.73-15.302c0.251,0.063,0.508,0.083,0.767,0.079c0.767,0.019,1.539-0.26,2.124-0.845
+               C34.291,74.064,34.291,72.225,33.156,71.091z"/>
+       </g>
+   </g>
+   <path fill="#0066FF" stroke="#FFFFFF" stroke-width="0.9732" d="M32.801,64.026c0,1.965-7.207,3.559-16.101,3.559l0,0
+       c-8.889,0-16.096-1.594-16.096-3.559V36.973c0-1.964,7.207-3.556,16.096-3.556l0,0c8.894,0,16.101,1.592,16.101,3.556V64.026z"/>
+   <g class="train-corb">
+       <path fill="#0066FF" stroke="#FFFFFF" stroke-width="0.5" d="M39.912,50.501c0,1.015-0.822,1.837-1.838,1.837H17.375
+           c-1.016,0-1.837-0.822-1.837-1.837l0,0c0-1.015,0.822-1.837,1.837-1.837h20.699C39.09,48.664,39.912,49.486,39.912,50.501
+           L39.912,50.501z"/>
+       <path fill="#0066FF" stroke="#FFFFFF" stroke-width="0.5" d="M40.5,50.501c0,1.419-1.151,2.572-2.572,2.572l0,0
+           c-1.422,0-2.572-1.152-2.572-2.572l0,0c0-1.421,1.15-2.572,2.572-2.572l0,0C39.349,47.929,40.5,49.08,40.5,50.501L40.5,50.501z"/>
+   </g>
+   <g class="train-cog">
+       <g>
+           <g>
+               <path fill="#0066FF" d="M28.801,55.357l-1.211-1.284c0.306-0.902,0.495-1.855,0.559-2.846l1.616-0.726l-1.616-0.726
+                   c-0.064-0.997-0.256-1.957-0.566-2.865l1.21-1.286l-1.768-0.051c-0.433-0.875-0.975-1.684-1.612-2.41l0.628-1.653l-1.653,0.629
+                   c-0.731-0.643-1.547-1.188-2.43-1.623l-0.053-1.768l-1.282,1.213c-0.903-0.306-1.857-0.496-2.848-0.56l-0.726-1.615L16.323,39.4
+                   c-0.997,0.064-1.957,0.256-2.865,0.566l-1.286-1.208l-0.05,1.766c-0.875,0.434-1.685,0.976-2.411,1.614L8.058,41.51l0.628,1.654
+                   c-0.642,0.731-1.187,1.546-1.622,2.428l-1.767,0.054l1.211,1.283c-0.306,0.903-0.496,1.857-0.56,2.847l-1.616,0.726l1.616,0.726
+                   c0.064,0.997,0.257,1.957,0.566,2.865l-1.209,1.286l1.767,0.05c0.434,0.875,0.976,1.684,1.613,2.41l-0.628,1.653l1.653-0.628
+                   c0.731,0.642,1.546,1.187,2.428,1.621l0.054,1.769l1.283-1.213c0.903,0.307,1.857,0.496,2.848,0.56l0.726,1.616l0.726-1.616
+                   c0.997-0.064,1.957-0.256,2.865-0.565l1.284,1.211l0.053-1.769c0.875-0.434,1.684-0.976,2.41-1.613l1.653,0.629l-0.629-1.654
+                   c0.643-0.731,1.188-1.546,1.622-2.428L28.801,55.357z"/>
+           </g>
+           <g>
+               <path fill="none" stroke="#FFFFFF" stroke-width="0.3842" d="M28.801,55.357l-1.211-1.284c0.306-0.902,0.495-1.855,0.559-2.846
+                   l1.616-0.726l-1.616-0.726c-0.064-0.997-0.256-1.957-0.566-2.865l1.21-1.286l-1.768-0.051c-0.433-0.875-0.975-1.684-1.612-2.41
+                   l0.628-1.653l-1.653,0.629c-0.731-0.643-1.547-1.188-2.43-1.623l-0.053-1.768l-1.282,1.213c-0.903-0.306-1.857-0.496-2.848-0.56
+                   l-0.726-1.615L16.323,39.4c-0.997,0.064-1.957,0.256-2.865,0.566l-1.286-1.208l-0.05,1.766c-0.875,0.434-1.685,0.976-2.411,1.614
+                   L8.058,41.51l0.628,1.654c-0.642,0.731-1.187,1.546-1.622,2.428l-1.767,0.054l1.211,1.283c-0.306,0.903-0.496,1.857-0.56,2.847
+                   l-1.616,0.726l1.616,0.726c0.064,0.997,0.257,1.957,0.566,2.865l-1.209,1.286l1.767,0.05c0.434,0.875,0.976,1.684,1.613,2.41
+                   l-0.628,1.653l1.653-0.628c0.731,0.642,1.546,1.187,2.428,1.621l0.054,1.769l1.283-1.213c0.903,0.307,1.857,0.496,2.848,0.56
+                   l0.726,1.616l0.726-1.616c0.997-0.064,1.957-0.256,2.865-0.565l1.284,1.211l0.053-1.769c0.875-0.434,1.684-0.976,2.41-1.613
+                   l1.653,0.629l-0.629-1.654c0.643-0.731,1.188-1.546,1.622-2.428L28.801,55.357z"/>
+           </g>
+       </g>
+       <circle fill="none" stroke="#FFFFFF" stroke-width="0.5763" cx="17.049" cy="50.501" r="9.443"/>
+   </g>
+   </svg>`);
     }
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.querySelector('#train00_car').innerHTML=`
-    <svg style="width: 100%; height: 100%;" class="svg-container">
-    </svg>
-    `;
-    let TrainGo = new TrainAnimation;
-});
+let TrainGo = new TrainAnimation;
+

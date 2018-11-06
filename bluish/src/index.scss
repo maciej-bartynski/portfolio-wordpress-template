@@ -3,6 +3,7 @@
 @import './scss/typo.scss';
 
 //sections
+@import './scss/sections/background.scss';
 @import './scss/sections/navbar.scss';
 @import './scss/sections/header.scss';
 @import './scss/sections/portfolio.scss';
@@ -29,4 +30,6 @@
 body {
     margin: 0;
     position: relative;
+    width: 100%;
+    overflow-x: hidden;
 }

@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 class Background {
     constructor(){
-        this.bg = $('.animation-panel');
+        this.bg = $('#bg0-1');
         this.head = $('#header02');
         this.windo = $(window);
         this.position = this.head.position().top + this.head.offset().top + this.head.outerHeight(true);
@@ -11,8 +11,8 @@ class Background {
         this.animationToBg = false;
         this.bgAdded = false;
 
-        this.machina = $('#machina-wrapper');
-        this.secondMachina=$('#second-machina-wrapper');
+        this.machina = $('#bg2');
+        this.secondMachina=$('#bg1');
         this.counter=false;
         this.timer;
 
@@ -33,7 +33,7 @@ class Background {
             }
 
             if (this.animationToBg && !this.bgAdded){
-                this.bg.addClass(this.bgClass);
+                this.bg.css('position', 'fixed');
                 this.counter ? 
                 (()=>{this.secondMachina.fadeIn(); this.machina.css('display', 'none')})()
                 :
@@ -41,13 +41,12 @@ class Background {
                 this.bgAdded = true;
                 this.bgChange();
             } else if (!this.animationToBg && this.bgAdded) {
-                this.bg.removeClass(this.bgClass);
+                this.bg.css('position', 'absolute');
                 clearTimeout(this.timer);
                 this.bgAdded = false;
                 this.machina.css('display', 'block');
                 this.secondMachina.css('display', 'none');
             }
-
         })
     }
 
@@ -77,14 +76,14 @@ class Background {
         if (that.counter) {
             that.secondMachina.fadeOut('slow', ()=>{
                clearTimeout(that.timer);
-               that.bg.removeClass(that.bgClass);
+               that.bg.css('position', 'absolute');
                that.bgAdded = false;
                that.counter=false;
             });
         } else {
             that.machina.fadeOut('slow', () => {
                 clearTimeout(that.timer);
-                that.bg.removeClass(that.bgClass);
+                that.bg.css('position', 'absolute');
                 that.bgAdded = false;
                 that.counter = true;
             });

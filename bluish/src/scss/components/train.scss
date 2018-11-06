@@ -1,41 +1,60 @@
 #train00 {
-    position: absolute;
-    height: 100%;
+    position: fixed;
+    height: 100vh;
     top: 0;
-    bottom: 0;
-    width: 50px;
-    z-index: 110;
+    left: 0;
+    width: 40px;
+    z-index: 100;
+    overflow: hidden;
 }
 
 #train00_track {
     position: absolute;
-    height: 100%;
+    height: 100vh;
     top: 0;
-    bottom: 0;
     width: 4px;
-    left: 28px;
-    background: $blue;
-    z-index: 111;
+    left: 18px;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 0 0;
+    z-index: 101;
+
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count:infinite;
+
+    overflow: hidden;
+
+    &.godown{
+        animation-name: scrolling-bg;
+        animation-direction: normal;
+    }
+    &.goup{
+        animation-name: scrolling-bg;
+        animation-direction: reverse;
+    }
+    @keyframes scrolling-bg {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 0 -100vh;
+        }
+    }
+
+    @media screen and (max-width: 400px){
+        opacity: 0;
+    }
 }
 
 #train00_car {
     position: absolute;
-    top: 110px;
-    left: 10px;
+    top: 55px;
+    left: 0;
     width: 40px;
-    height: 50px;
-    background: $blue;
-    z-index: 112;
-    border-radius: 3px;
-}
-
-#train00_car {
-    svg.train--container {
-        width: 100%;
-        height: 100%;
-        #temporary-engine-wheel {
-            width: 90%;
-        }
-    }
+    height: 100px;
+    z-index: 102;
+    cursor: pointer;
+    user-select: none;
 }
 
