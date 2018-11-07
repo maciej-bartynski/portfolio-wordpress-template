@@ -78,6 +78,7 @@
         @media screen and (min-width: 900px){
             display: none;
         }
+        user-select: none;
     }
 
     .slideswitch-left,
@@ -90,24 +91,28 @@
         color: $blue;
         font-size: 15px;
         @include serif;
+        user-select: none;
     }
 
     #slideswitch-timer {
         height: 50px;
         width: 50px;
         position: relative;
+        user-select: none;
 
         #slideswitch-clock {
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
+            user-select: none;
         }
         #slideswitch-niddle {
             position: absolute;
             top: 0%;
             left: 49%;
             height: 100%;
+            user-select: none;
                         
             &.add-animation {
                 animation-iteration-count: 1;

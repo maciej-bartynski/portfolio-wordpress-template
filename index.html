@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./bluish/docs/style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
 
@@ -13,8 +13,16 @@
 </head>
 <body>
 
+    <div id="bg0-1">
+        <img id="bg1" src="bluish/media/bg1.svg" alt=""/>
+        <img id="bg2" src="bluish/media/bg2.svg" alt=""/>
+    </div>
+
     <div id="train00">
-        <div id="train00_track"></div>
+        <div 
+        id="train00_track"
+        style="background-image: url('./bluish/media/track.svg');"
+        ></div>
         <div id="train00_car">
             
         </div>
@@ -57,7 +65,7 @@
 
     </div>
 
-    <header id="header02">
+    <header class="scrolling-stage" id="header02">
 
         <div class="header02--positioner">
             <div class="header02--container">
@@ -88,40 +96,7 @@
 
                             <div id="machina-wrapper">
                             </div>
-                            <div id="second-machina-wrapper">
-                                <div id="cogs-box">
-                                    <div class="inside-conta">
-                                        <img id="cog-1" src="bluish/media/svg-animation/kompasXcog.svg"/>
-                                        <img id="cog-2" src="bluish/media/svg-animation/kompasXcog.svg" />
-                                        <img id="cog-3" src="bluish/media/svg-animation/kompasXcog.svg" />
-                                        <img id="cog-4" src="bluish/media/svg-animation/kompasXcog.svg" />
-                                    </div>
-                                </div>
-                                <div id="engine-box">
-                                    <div class="inside-conta">
-                                        <img id="engine-obudowa" src="bluish/media/svg-animation/kompasXobudowa.svg"/>
-                                        <img id="engine-cog" src="bluish/media/svg-animation/kompasXwhitecog.svg"/>
-                                        <img id="engine-littlecog" src="bluish/media/svg-animation/kompasXwhitecoglittle.svg"/>
-                                        <img id="engine-tlok" src="bluish/media/svg-animation/kompasXtlok.svg"/>
-                                        <img id="engine-belka" src="bluish/media/svg-animation/kompasXbelka.svg"/>
-                                    </div>
-                                </div>
-
-                                <div id="compas-box">
-                                    <div class="inside-conta">
-                                        <img id="compas-clock" src="bluish/media/svg-animation/kompasXclock.svg"/>
-                                        <img id="compas-niddle" src="bluish/media/svg-animation/kompasXigla.svg"/>
-                                    </div>
-                                </div>
-
-                                <div id="light-box">
-                                    <div class="inside-conta">
-                                        <img id="light-off" src="bluish/media/svg-animation/kompasXjarzenof.svg"/>
-                                        <img id="light-on" src="bluish/media/svg-animation/kompasXjarzenon.svg"/>
-                                    </div>
-                                </div>
-
-                            </div>
+                            
                             <script src="./bluish/docs/hero.js"></script>
 
                     </div>
@@ -139,7 +114,7 @@
 
     <main style="width:100%; padding: 0; margin:0;">
 
-        <section id="projekty03">
+        <section class="scrolling-stage" id="projekty03">
             <h2 class="section-title">Projekty</h2>
         
             <div class="slider100vw--wrapper">
@@ -539,7 +514,7 @@
                 
         </section>
 
-        <section id="tools04">
+        <section class="scrolling-stage" id="tools04">
             <h2 class="section-title tools04--title">Co oferuję</h2>
 
             <div class="slider25vw--wrapper">
@@ -790,7 +765,7 @@
 
         </section>
 
-        <section id="searchfor05">
+        <section class="scrolling-stage" id="searchfor05">
             <h2 class="section-title searchfor05--title">Czego szukam</h2>
             <ul class="searchfor05_list--container">
                 <li class="searchfor05_list--item">
@@ -814,7 +789,7 @@
             </ul>
         </section>
 
-        <section id="questions06">
+        <section class="scrolling-stage" id="questions06">
             <h2 class="section-title questions06--title">Szybka rekrutacja</h2>
             <p class="excerpt questions06_excerpt">
                 Lorem ipsum sit dolor amet et plural singular et colaborantiam est.
@@ -943,7 +918,7 @@
             </ul>
         </section>
 
-        <section id="contact07">
+        <section class="scrolling-stage" id="contact07">
             <h2 class="section-title contact07-title">Napisz do mnie</h2>
             <div id="contact07_contact--wrapper">
                 <div class="contact07_contact--positioner">
@@ -967,7 +942,7 @@
             </div>
         </section>
 
-        <section id="aboutme08">
+        <section class="scrolling-stage" id="aboutme08">
             <h2 class="section-title aboutme08-title">Wiecej o mnie</h2>
             <p class="excerpt aboutme08_excerpt">
                 Lorem ipsum sit dolor amet et plural singular et colaborantiam est.
@@ -1108,7 +1083,7 @@
 
     </main>
 
-    <footer id="footer09">
+    <footer class="scrolling-stage" id="footer09">
 
         <span class="footer09_get-cv footer-item">
             Pobierz CV <a class="footer09_get-cv_button footer-item" href="">tutaj</a>
@@ -1177,6 +1152,6 @@
 
     </footer>
 
-<script src="./home.js"></script>
+<script src="./bluish/docs/home.js"></script>
 </body>
 </html>
