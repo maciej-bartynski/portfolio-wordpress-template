@@ -3,8 +3,29 @@
     height: 100%;
     top: 0;
     bottom: 0;
-    width: 50px;
     z-index: 110;
+
+    width: 50px;
+    min-width: 50px;
+
+    @media screen and (min-width: 900px) {
+        width: 5%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 8%;
+    }
+
+    @media screen and (min-width: 1500px) {
+        width: 140px;
+    }
+}
+
+#switch-line {
+    position: absolute;
+    left: 28;
+    stroke: $blue;
+    stroke-width: 4px;
 }
 
 #train00_track {

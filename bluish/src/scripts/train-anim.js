@@ -79,8 +79,13 @@ class TrainAnimation {
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.querySelector('#train00_car').innerHTML=`
-    <svg style="width: 100%; height: 100%;" class="svg-container">
+    <svg 
+    style="width: 100%; height: 100%; position: relative; top: -50%;" 
+    class="svg-container" 
+    width="40" 
+    height="40">
+        <circle fill="#0066FF" stroke="#FFFFFF" stroke-width="2" cx="20" cy="20" r="7"></circle>
     </svg>
     `;
-    let TrainGo = new TrainAnimation;
+    //let TrainGo = new TrainAnimation;
 });

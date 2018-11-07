@@ -156,13 +156,13 @@
 #navbar01 {
 @media screen and (min-width: 900px) {
     .navbar01--positioner {
-        background: $bgcolo;
+        background: $light; //$bgcolo;
         @include navi-margin;
         .navbar01--container {
             display: flex;
             padding: 0;
             position: static;
-            background: $bgcolo;
+            background: $light;//$bgcolo;
             height: 100%;
             .navbar01--item {
                 height: 100%;
