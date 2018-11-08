@@ -1241,7 +1241,7 @@ body {
 #train00_car {
   position: fixed;
   will-change: transform;
-  top: 55px;
+  top: 85px;
   left: 0;
   width: 40px;
   height: 100px;
@@ -2181,13 +2181,11 @@ body {
   height: 60px;
   overflow: hidden;
   flex-wrap: nowrap;
-  z-index: 120;
-  border: solid 1px red; }
+  z-index: 120; }
   @media screen and (min-width: 900px) {
     .section-border--wrapper {
       display: flex; } }
   .section-border--wrapper .section-border_track {
-    border: solid 1px red;
     width: 100%;
     height: 6px;
     position: absolute;
@@ -2198,29 +2196,25 @@ body {
     overflow: hidden;
     z-index: -1; }
   .section-border--wrapper .section-border_switcher {
-    border: solid 1px red;
     width: 60px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center; }
     .section-border--wrapper .section-border_switcher img {
-      width: 50%;
-      height: 50%;
-      cursor: pointer;
-      border: solid 1px red; }
+      width: 30%;
+      height: 30%;
+      cursor: pointer; }
   .section-border--wrapper .section-border_animation-area {
     width: calc(100% - 60px);
     height: 100%;
     position: relative;
-    display: flex;
-    border: solid 1px red; }
+    display: flex; }
     .section-border--wrapper .section-border_animation-area .section-border_animated-item {
       width: 60px;
       height: 60px;
       position: absolute;
-      top: 0;
-      border: solid 1px red; }
+      top: 0; }
 
 #section-border-projekty_item-01 {
   position: relative;
@@ -2228,9 +2222,9 @@ body {
   #section-border-projekty_item-01 img {
     position: absolute;
     right: 50%;
-    top: 0;
-    width: 60px;
-    height: 60px; }
+    top: 15px;
+    width: 30px;
+    height: 30px; }
 
 #section-border-projekty_item-02 {
   position: relative;
@@ -2238,12 +2232,19 @@ body {
   #section-border-projekty_item-02 img {
     position: absolute;
     left: 50%;
-    top: 0;
-    width: 60px;
-    height: 60px; }
+    top: 15px;
+    width: 30px;
+    height: 30px; }
 
 #section-border-tools_item-01 {
-  right: 0; }
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #section-border-tools_item-01 img {
+    width: 30%;
+    height: 30%;
+    cursor: pointer; }
 
 #section-border-searchfor .section-border_animation-area {
   width: 100%; }
@@ -2254,11 +2255,9 @@ body {
   justify-content: center;
   align-items: center; }
   #section-border-searchfor_item-01 img {
-    width: 50%;
-    height: 50%;
-    cursor: pointer;
-    background: black;
-    border: solid 1px red; }
+    width: 30%;
+    height: 30%;
+    cursor: pointer; }
 
 #section-border-questions {
   width: 110vw;
@@ -2274,11 +2273,9 @@ body {
   justify-content: center;
   align-items: center; }
   #section-border-questions_item-01 img {
-    width: 50%;
-    height: 50%;
-    cursor: pointer;
-    background: black;
-    border: solid 1px red; }
+    width: 30%;
+    height: 30%;
+    cursor: pointer; }
 
 #section-border-contact {
   width: 100%;
@@ -2299,9 +2296,7 @@ body {
   #section-border-contact_item-03 img {
     width: 50%;
     height: 50%;
-    cursor: pointer;
-    background: black;
-    border: solid 1px red; }
+    cursor: pointer; }
 
 #section-border-contact_item-01 {
   left: 50px; }

@@ -24,20 +24,6 @@
     background-position: 0 0;
     z-index: 101;
 
-    //animation-duration: 1000ms;
-    //animation-fill-mode: forwards;
-    //animation-iteration-count:infinite;
-
-    //overflow: hidden;
-
-    &.godown{
-        //animation-name: scrolling-bg;
-        //animation-direction: normal;
-    }
-    &.goup{
-        //animation-name: scrolling-bg;
-        //animation-direction: reverse;
-    }
     @keyframes scrolling-bg {
         from {
             background-position: 0 0;
@@ -55,7 +41,7 @@
 #train00_car {
     position: fixed;
     will-change: transform;
-    top: 55px;
+    top: 85px;
     left: 0;
     width: 40px;
     height: 100px;
