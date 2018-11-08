@@ -32,6 +32,7 @@
     height: 60px;
     box-sizing: border-box;
     .navbar01--positioner {
+        will-change: transform;
         width: 100%;
         height: 60px;
         border-bottom: 3px solid $blue;

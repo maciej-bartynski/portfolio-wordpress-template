@@ -1,7 +1,8 @@
 #train00 {
-    position: fixed;
-    height: 100vh;
+    position: absolute;
+    height: 100%;
     top: 0;
+    bottom: 0;
     left: 0;
     width: 40px;
     z-index: 100;
@@ -13,28 +14,29 @@
 
 #train00_track {
     position: absolute;
-    height: 100vh;
+    height: 100%;
     top: 0;
+    bottom: 0;
     width: 4px;
     left: 18px;
     background-repeat: repeat-y;
-    //background-size: cover;
+    
     background-position: 0 0;
     z-index: 101;
 
-    animation-duration: 1000ms;
-    animation-fill-mode: forwards;
-    animation-iteration-count:infinite;
+    //animation-duration: 1000ms;
+    //animation-fill-mode: forwards;
+    //animation-iteration-count:infinite;
 
-    overflow: hidden;
+    //overflow: hidden;
 
     &.godown{
-        animation-name: scrolling-bg;
-        animation-direction: normal;
+        //animation-name: scrolling-bg;
+        //animation-direction: normal;
     }
     &.goup{
-        animation-name: scrolling-bg;
-        animation-direction: reverse;
+        //animation-name: scrolling-bg;
+        //animation-direction: reverse;
     }
     @keyframes scrolling-bg {
         from {
@@ -51,7 +53,8 @@
 }
 
 #train00_car {
-    position: absolute;
+    position: fixed;
+    will-change: transform;
     top: 55px;
     left: 0;
     width: 40px;

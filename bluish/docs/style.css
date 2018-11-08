@@ -96,26 +96,33 @@ body {
 #bg0-1 {
   width: 90%;
   height: calc(100vh - 60px);
-  position: absolute;
+  position: fixed;
   top: 60px;
   left: 5%;
-  z-index: -1;
+  z-index: -10;
   will-change: transform; }
+  @media screen and (max-width: 786px) {
+    #bg0-1 {
+      display: none; } }
   #bg0-1 #bg1 {
-    display: none;
     opacity: 0.1;
     width: 100%;
-    height: 100%;
+    height: 90%;
     position: absolute;
-    top: 0;
-    left: 0; }
+    top: 10%;
+    left: 0;
+    opacity: 0.1;
+    z-index: -9;
+    will-change: transform, top; }
   #bg0-1 #bg2 {
     width: 100%;
-    height: 100%;
+    height: 90%;
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.1; }
+    opacity: 0.2;
+    z-index: -9;
+    will-change: transform, top; }
 
 #navbar01 .menu-item-font {
   font-size: 13px; }
@@ -136,6 +143,7 @@ body {
   height: 60px;
   box-sizing: border-box; }
   #navbar01 .navbar01--positioner {
+    will-change: transform;
     width: 100%;
     height: 60px;
     border-bottom: 3px solid #0066ff;
@@ -355,14 +363,6 @@ body {
         display: flex;
         justify-content: center;
         align-items: center; }
-        #header02 .header02--positioner .header02--container .animation-panel.fixed-background {
-          position: fixed;
-          top: 0;
-          left: 0;
-          height: 100vh;
-          width: 100vw;
-          opacity: 0.1;
-          z-index: -1; }
 
 @media screen and (min-width: 900px) {
   #header02 {
@@ -394,14 +394,14 @@ body {
           padding-left: 0;
           padding-right: 0; }
         #header02 .header02--positioner .header02--container .header02_title {
-          padding: 100px 0;
+          padding: 12vh 0;
           text-align: left; }
         #header02 .header02--positioner .header02--container .description-panel {
           color: #0066ff;
           font-family: 'Roboto Slab', serif;
           width: 100%;
           max-width: 400px;
-          padding: 40px 0; }
+          padding: 2.77vh 0 3.79vh 0; }
           #header02 .header02--positioner .header02--container .description-panel span {
             display: block;
             width: 100%; }
@@ -421,7 +421,7 @@ body {
           color: #0066ff;
           font-family: 'Roboto Slab', serif;
           font-size: 16px;
-          padding: 40px 0;
+          padding: 0 0 40px 0;
           width: unset; }
           #header02 .header02--positioner .header02--container .contact-panel span {
             display: block; }
@@ -430,10 +430,10 @@ body {
           top: 0;
           right: 0;
           width: 50%;
-          height: 100%;
+          height: calc(100vh - 60px);
           display: flex;
           justify-content: center;
-          align-items: center; } }
+          align-items: flex-end; } }
 
 #projekty03 {
   margin-bottom: 50px; }
@@ -878,86 +878,85 @@ body {
 #contact07 #contact07_contact--wrapper.isFixed div#plugin-form .button {
   margin: 15px auto 15px auto; }
 
-#contact07 #contact07_contact--wrapper .contact07_contact--header {
-  display: none; }
-
-#contact07 #contact07_contact--wrapper .contact07_contact--container {
-  width: 100%; }
-
-#contact07 #contact07_contact--wrapper .contact07_contact--switcher {
-  display: none; }
-
-@media screen and (min-width: 600px) {
-  #contact07 #contact07_contact--wrapper.isFixed {
-    position: fixed;
-    bottom: 1%;
-    right: 1%;
-    -webkit-animation: 500ms forwards show-formula;
-            animation: 500ms forwards show-formula; }
-  @-webkit-keyframes show-formula {
-    from {
-      -webkit-transform: scale(0);
-              transform: scale(0); }
-    to {
-      -webkit-transform: scale(1);
-              transform: scale(1); } }
-  @keyframes show-formula {
-    from {
-      -webkit-transform: scale(0);
-              transform: scale(0); }
-    to {
-      -webkit-transform: scale(1);
-              transform: scale(1); } }
-    #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner {
-      display: none;
-      width: 300px;
-      box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
-      border-radius: 3px;
-      overflow: hidden;
-      background: #ffffff; }
-      #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background: #5498FF;
-        color: #ffffff;
-        position: relative; }
-        #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--title {
+#contact07 #contact07_contact--wrapper {
+  will-change: transform; }
+  #contact07 #contact07_contact--wrapper .contact07_contact--header {
+    display: none; }
+  #contact07 #contact07_contact--wrapper .contact07_contact--container {
+    width: 100%; }
+  #contact07 #contact07_contact--wrapper .contact07_contact--switcher {
+    display: none; }
+  @media screen and (min-width: 600px) {
+    #contact07 #contact07_contact--wrapper.isFixed {
+      position: fixed;
+      bottom: 1%;
+      right: 1%;
+      -webkit-animation: 500ms forwards show-formula;
+              animation: 500ms forwards show-formula; }
+    @-webkit-keyframes show-formula {
+      from {
+        -webkit-transform: scale(0);
+                transform: scale(0); }
+      to {
+        -webkit-transform: scale(1);
+                transform: scale(1); } }
+    @keyframes show-formula {
+      from {
+        -webkit-transform: scale(0);
+                transform: scale(0); }
+      to {
+        -webkit-transform: scale(1);
+                transform: scale(1); } }
+      #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner {
+        display: none;
+        width: 300px;
+        box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
+        border-radius: 3px;
+        overflow: hidden;
+        background: #ffffff; }
+        #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header {
+          width: 100%;
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          width: 100%;
-          margin: 0;
-          padding: 5px;
+          background: #5498FF;
           color: #ffffff;
-          font-size: 12px;
-          font-weight: 300;
-          line-height: 100%; }
-        #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--closer {
-          position: absolute;
-          right: 0;
-          top: 0;
-          padding: 5px 5px 0 0;
-          font-family: 'Roboto', sans-serif;
-          font-weight: 300;
-          font-size: 10px;
-          cursor: pointer; }
-          #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--closer i {
+          position: relative; }
+          #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--title {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            padding: 5px;
+            color: #ffffff;
             font-size: 12px;
+            font-weight: 300;
             line-height: 100%; }
-    #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--switcher {
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      background: #0066ff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
-      cursor: pointer; } }
+          #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--closer {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 5px 5px 0 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 10px;
+            cursor: pointer; }
+            #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--positioner .contact07_contact--header .contact07_contact--closer i {
+              font-size: 12px;
+              line-height: 100%; }
+      #contact07 #contact07_contact--wrapper.isFixed .contact07_contact--switcher {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background: #0066ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 16px 20px 0px rgba(0, 102, 255, 0.16);
+        cursor: pointer; } }
 
 #aboutme08 {
   margin-bottom: 50px;
@@ -1189,9 +1188,10 @@ body {
       margin-left: -16.665%; } }
 
 #train00 {
-  position: fixed;
-  height: 100vh;
+  position: absolute;
+  height: 100%;
   top: 0;
+  bottom: 0;
   left: 0;
   width: 40px;
   z-index: 100;
@@ -1202,29 +1202,14 @@ body {
 
 #train00_track {
   position: absolute;
-  height: 100vh;
+  height: 100%;
   top: 0;
+  bottom: 0;
   width: 4px;
   left: 18px;
   background-repeat: repeat-y;
   background-position: 0 0;
-  z-index: 101;
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  overflow: hidden; }
-  #train00_track.godown {
-    -webkit-animation-name: scrolling-bg;
-            animation-name: scrolling-bg;
-    -webkit-animation-direction: normal;
-            animation-direction: normal; }
-  #train00_track.goup {
-    -webkit-animation-name: scrolling-bg;
-            animation-name: scrolling-bg;
-    animation-direction: reverse; }
+  z-index: 101; }
 
 @-webkit-keyframes scrolling-bg {
   from {
@@ -1242,7 +1227,8 @@ body {
       opacity: 0; } }
 
 #train00_car {
-  position: absolute;
+  position: fixed;
+  will-change: transform;
   top: 55px;
   left: 0;
   width: 40px;
@@ -1315,8 +1301,7 @@ body {
         color: #0066ff; }
 
 #machina-wrapper {
-  width: 47.25vw;
-  height: 25vw; }
+  width: 100%; }
   #machina-wrapper #machina {
     width: 100%;
     height: auto; }

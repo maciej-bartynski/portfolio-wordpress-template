@@ -13,6 +13,7 @@ import './scripts/aboutme.js';
 import {MobileMenu} from './scripts/navbar.js';
 
 //animations
+import './hero-animation.js';
 import './karynka.js';
 
 $(document).ready(function () { 
