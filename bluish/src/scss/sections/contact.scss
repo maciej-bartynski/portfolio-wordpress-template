@@ -1,4 +1,9 @@
 #contact07{
+    @media screen and (min-width: 900px){
+        padding-top: 60px!important;
+        overflow: hidden;
+        position: relative;
+    }
     @include navi-margin;
     margin-bottom: 50px;
     .contact07-title {

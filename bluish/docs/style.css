@@ -556,6 +556,8 @@ body {
 #searchfor05 {
   width: 100%;
   margin-bottom: 50px; }
+  #searchfor05 .searchfor05--animation-wrapper {
+    width: 100%; }
   #searchfor05 .searchfor05--title {
     width: 100%;
     padding: 0 40px;
@@ -641,7 +643,12 @@ body {
 #questions06 {
   margin-bottom: 50px;
   padding-left: 2vw;
-  padding-right: 2vw; }
+  padding-right: 2vw;
+  position: relative;
+  overflow: hidden; }
+  @media screen and (min-width: 900px) {
+    #questions06 {
+      padding-top: 60px !important; } }
   @media screen and (min-width: 600px) {
     #questions06 {
       padding: 0 40px; } }
@@ -767,6 +774,11 @@ body {
 #contact07 {
   padding: 0 40px;
   margin-bottom: 50px; }
+  @media screen and (min-width: 900px) {
+    #contact07 {
+      padding-top: 60px !important;
+      overflow: hidden;
+      position: relative; } }
   @media screen and (min-width: 900px) {
     #contact07 {
       padding: 0 5%; } }
@@ -2161,6 +2173,144 @@ body {
               transform: scale(1.05); }
       .tools--cell:hover .tools_lower--positioner {
         opacity: 1; } }
+
+.section-border--wrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  z-index: 120;
+  border: solid 1px red; }
+  @media screen and (min-width: 900px) {
+    .section-border--wrapper {
+      display: flex; } }
+  .section-border--wrapper .section-border_track {
+    border: solid 1px red;
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    background-position: left center;
+    background-repeat: repeat-x;
+    overflow: hidden;
+    z-index: -1; }
+  .section-border--wrapper .section-border_switcher {
+    border: solid 1px red;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .section-border--wrapper .section-border_switcher img {
+      width: 50%;
+      height: 50%;
+      cursor: pointer;
+      border: solid 1px red; }
+  .section-border--wrapper .section-border_animation-area {
+    width: calc(100% - 60px);
+    height: 100%;
+    position: relative;
+    display: flex;
+    border: solid 1px red; }
+    .section-border--wrapper .section-border_animation-area .section-border_animated-item {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 0;
+      border: solid 1px red; }
+
+#section-border-projekty_item-01 {
+  position: relative;
+  width: 50%; }
+  #section-border-projekty_item-01 img {
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 60px;
+    height: 60px; }
+
+#section-border-projekty_item-02 {
+  position: relative;
+  width: 50%; }
+  #section-border-projekty_item-02 img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 60px;
+    height: 60px; }
+
+#section-border-tools_item-01 {
+  right: 0; }
+
+#section-border-searchfor .section-border_animation-area {
+  width: 100%; }
+
+#section-border-searchfor_item-01 {
+  left: calc(50% - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #section-border-searchfor_item-01 img {
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+    background: black;
+    border: solid 1px red; }
+
+#section-border-questions {
+  width: 110vw;
+  position: absolute;
+  top: 0;
+  left: -5vw; }
+  #section-border-questions .section-border_animation-area {
+    width: 100%; }
+
+#section-border-questions_item-01 {
+  left: calc(50% - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #section-border-questions_item-01 img {
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+    background: black;
+    border: solid 1px red; }
+
+#section-border-contact {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  #section-border-contact .section-border_animation-area {
+    width: 100%; }
+
+#section-border-contact_item-01,
+#section-border-contact_item-02,
+#section-border-contact_item-03 {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #section-border-contact_item-01 img,
+  #section-border-contact_item-02 img,
+  #section-border-contact_item-03 img {
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+    background: black;
+    border: solid 1px red; }
+
+#section-border-contact_item-01 {
+  left: 50px; }
+
+#section-border-contact_item-02 {
+  right: 50px; }
+
+#section-border-contact_item-03 {
+  left: 250px; }
 
 * {
   box-sizing: border-box; }

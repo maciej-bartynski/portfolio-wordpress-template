@@ -10,6 +10,7 @@ import './scripts/sectionslide-tools.js';
 import './scripts/questions.js';
 import './scripts/contact.js';
 import './scripts/aboutme.js';
+import './scripts/section-border.js';
 import {MobileMenu} from './scripts/navbar.js';
 
 //animations
