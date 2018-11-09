@@ -24,6 +24,18 @@
 @import './scss/components/slider25vw/tools-tilt.scss';
 @import './scss/components/section-border.scss';
 
+//pages
+@import './scss/pages/subpage.scss';
+@import './scss/pages/contact/contact-page.scss';
+@import './scss/pages/recomends/recomends-page.scss';
+@import './scss/pages/animations/animations-page.scss';
+
+@import './scss/pages/aboutme/aboutme-page.scss';
+@import './scss/pages/offeredtools/offeredtools-page.scss';
+@import './scss/pages/projects/projects-page.scss';
+@import './scss/pages/searchfor/searchfor-page.scss';
+@import './scss/pages/quickinterview/quickinterview-page.scss';
+
 * {
     box-sizing: border-box;
 }

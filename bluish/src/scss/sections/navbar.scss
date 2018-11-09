@@ -104,6 +104,13 @@
                         user-select: none;
 
                     }
+                    &,
+                    &:hover,
+                    &:active,
+                    &:visited {
+                        text-decoration: none;
+                        color: inherit;
+                    }
                 }
             }
         }

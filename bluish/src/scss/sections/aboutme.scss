@@ -25,7 +25,8 @@
     }
 }
 
-#aboutme08{
+#aboutme08,
+#animations-page {
     .aboutme08-list--container{
         list-style: none;
         padding: 0;
@@ -45,7 +46,8 @@
     }
 }
 
-#aboutme08 {
+#aboutme08,
+#animations-page {
     .aboutme08-list--item:nth-of-type(even) {
         .aboutme08-list_article_head,
         .aboutme08-list_article_hline--container,
@@ -63,7 +65,8 @@
     }
 }
 
-#aboutme08{
+#aboutme08,
+#animations-page {
     .aboutme08-list_article {
         width: 100%;
         display: flex;

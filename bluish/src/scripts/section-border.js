@@ -139,7 +139,7 @@ let eatThem = new Eater;
 class Reverser {
     constructor(){
         this.setState=this.setState.bind(this);
-        this.section = jquery('.searchfor05--animation-wrapper');
+        this.section = jquery('#section-border-searchfor--dummy-content');
         this.eagleOne = jquery('#section-border-searchfor_item-01');
         this.reverseIt = new TimelineMax({repeat: 0, onComplete: this.setState});
         this.reverseIt.pause(true);
@@ -205,7 +205,7 @@ let reverseThem = new Reverser;
 class Blinker {
     constructor(){
         this.setState=this.setState.bind(this);
-        this.section = jquery('.questions--animation-wrapper');
+        this.section = jquery('#section-border-questions--dummy-content');
         this.eagleOne = jquery('#section-border-questions_item-01');
         this.blinkIt = new TimelineMax({repeat: 0, onComplete: this.setState});
         this.blinkIt.pause(true);
