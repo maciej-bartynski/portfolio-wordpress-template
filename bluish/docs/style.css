@@ -295,10 +295,86 @@ body {
           #navbar01 .navbar01--positioner .navbar01--container .navbar01--item.float a {
             width: none;
             width: unset; }
+      #navbar01 .navbar01--positioner .navbar01--container .navbar01--icon-item {
+        justify-content: center; }
     #navbar01 .navbar01--positioner .navbar_mobile-switch {
       display: none;
       margin: 0;
       padding: 0; } }
+
+#navbar01 #search-panel01-b {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.7); }
+
+#navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner {
+  width: 100%;
+  display: flex; }
+  #navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner #search-image {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #808080; }
+  #navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner #search-panel01-b_input {
+    width: calc(100% - 60px);
+    height: 60px;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: left;
+    vertical-align: middle;
+    border: solid 1px #909090;
+    border-top: none;
+    border-bottom: none;
+    color: #5498FF;
+    font-family: 'Roboto', sans-serif; }
+  #navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner #search-panel01-b_input::-webkit-input-placeholder {
+    color: #909090; }
+  #navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner #search-panel01-b_input:-ms-input-placeholder {
+    color: #909090; }
+  #navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner #search-panel01-b_input::-ms-input-placeholder {
+    color: #909090; }
+  #navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner #search-panel01-b_input::placeholder {
+    color: #909090; }
+  #navbar01 #search-panel01-b #search-panel01-b_searchbar--positioner #close-search-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0066ff;
+    cursor: pointer; }
+
+#navbar01 #search-panel01-b #search-panel01-b_content--positioner {
+  width: 100%;
+  min-height: 100vh;
+  border-top: solid 5px #909090; }
+
+/*
+<div id="search-panel01-b">
+            <div class="search-panel01-b_searchbar--positioner">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Type here..." name="term" id="search-panel01-b_input"/>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="search-panel01-b_content--positioner"></div>
+        </div>
+
+*/
+.home-page-upper-bg--wrapper {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 30vw; }
 
 #header02 {
   width: 100%;
