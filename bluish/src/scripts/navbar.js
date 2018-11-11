@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import './search-panel.js';
 
 export class MobileMenu {
     constructor(){

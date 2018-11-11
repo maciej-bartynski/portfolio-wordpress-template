@@ -164,13 +164,13 @@
 #navbar01 {
 @media screen and (min-width: 900px) {
     .navbar01--positioner {
-        background: $light; //$bgcolo;
+        background: $light;
         @include navi-margin;
         .navbar01--container {
             display: flex;
             padding: 0;
             position: static;
-            background: $light;//$bgcolo;
+            background: $light;
             height: 100%;
             .navbar01--item {
                 height: 100%;
@@ -193,6 +193,9 @@
                         width: unset;
                     }
                 }
+            }
+            .navbar01--icon-item {
+                justify-content: center;
             }
         }
         .navbar_mobile-switch {

@@ -1,0 +1,76 @@
+#navbar01 {
+    #search-panel01-b {
+        display: none;
+        width:100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 101;
+        min-height: 100vh;
+        background: rgba(255, 255, 255, 0.7);
+    }
+}
+
+#navbar01 {
+    #search-panel01-b {
+        #search-panel01-b_searchbar--positioner {
+            width: 100%;
+            display: flex;
+            #search-image{
+                width: 60px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $textgray;
+            }
+            #search-panel01-b_input {
+                width: calc(100% - 60px);
+                height: 60px;
+                outline: none;
+                border: none;
+                padding: 10px 10px;
+                line-height: 30px;
+                font-size: 20px;
+                text-align: left;
+                vertical-align: middle; 
+                border: solid 1px $lightgray;
+                border-top: none;
+                border-bottom: none;
+                color: $lightblue;
+                @include sans;
+            }
+            #search-panel01-b_input::placeholder {
+                color: $lightgray;
+            }
+            #close-search-icon{
+                width: 60px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $blue;
+                cursor: pointer;
+            }
+        }
+        #search-panel01-b_content--positioner{
+            width: 100%;
+            min-height: 100vh;
+            border-top: solid 5px $lightgray;
+        }
+    }
+}
+
+
+/*
+<div id="search-panel01-b">
+            <div class="search-panel01-b_searchbar--positioner">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Type here..." name="term" id="search-panel01-b_input"/>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="search-panel01-b_content--positioner"></div>
+        </div>
+
+*/
+

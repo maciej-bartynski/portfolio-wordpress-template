@@ -5,6 +5,7 @@
 //sections
 @import './scss/sections/background.scss';
 @import './scss/sections/navbar.scss';
+@import './scss/sections/search-panel.scss';
 @import './scss/sections/header.scss';
 @import './scss/sections/portfolio.scss';
 @import './scss/sections/tools.scss';
@@ -38,6 +39,10 @@
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    width: 100%;
 }
 
 body {

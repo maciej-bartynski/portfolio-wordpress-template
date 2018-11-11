@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./bluish/docs/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
 
@@ -13,7 +13,9 @@
 </head>
 <body>
 
-    <img id="upper-bg" style="opacity: 0.4; top: -27vw; width: 80vw" src="./bluish/media/bg1.svg" alt=""/>
+    <div class="home-page-upper-bg--wrapper">
+        <img id="upper-bg" style="opacity: 0.4; top: -27vw; width: 80vw" src="./bluish/media/bg1.svg" alt=""/>
+    </div>
 
     <div id="bg0-1">
         <img id="bg1" src="bluish/media/bg1.svg" alt=""/>
@@ -21,6 +23,15 @@
     </div>
 
     <div id="navbar01">
+
+        <div id="search-panel01-b">
+            <div id="search-panel01-b_searchbar--positioner">
+                <i id="search-image" class="fas fa-search"></i>
+                <input type="text" placeholder="Type here..." name="term" id="search-panel01-b_input"/>
+                <i id="close-search-icon" class="fas fa-times"></i>
+            </div>
+            <div id="search-panel01-b_content--positioner"></div>
+        </div>
 
         <nav class="navbar01--positioner">
             <ul class="navbar01--container">
@@ -52,8 +63,18 @@
                     <a href="./animations.html">Play!</a>
                 </li>
                 <li class="menu-item-font navbar01--item float">
-                    <a href="./contact.html">Contact</a>
+                        <a href="./contact.html">Contact</a>
+                    </li>
+                <li class="menu-item-font navbar01--item float navbar01--icon-item">
+                    <span id="search-icon">
+                        <i class="fas fa-search"></i>
+                    </span>
                 </li>
+                <li class="menu-item-font navbar01--item float navbar01--icon-item">
+                        <span>
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </li>
             </ul>
             <div class="navbar_mobile-switch">
                 <span class="open">=</span>
@@ -1160,6 +1181,6 @@
 
     </footer>
 
-<script src="./bluish/docs/home.js"></script>
+<script src="./home.js"></script>
 </body>
 </html>
