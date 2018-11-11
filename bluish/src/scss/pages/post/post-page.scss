@@ -1,0 +1,62 @@
+.post-content--wrapper {
+    .post_metadata--positioner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 0 0 10px;
+        margin: 0;
+        list-style: none;
+        border-left: solid 1px $lightgray;
+        .post_metadata--item {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .category{
+            color: $blue;
+            text-transform: uppercase;
+        }
+        .tagline {
+            padding: 5px 0;
+        }
+        .links{
+            display: flex;
+            flex-wrap: wrap;
+            a {
+                display: flex;
+                width: 100%;
+                max-width: 100px;
+                height: 40px;
+                background: $lightblue;
+                border-radius: 20px;
+                margin-right: 5px;
+                color: $light;
+                text-decoration: none;
+                cursor: pointer;
+                justify-content: center;
+                align-items: center;
+                user-select: none;
+                &:hover, &:active, &:visited, &:focus {
+                    text-decoration: none;
+                    color: $light;
+                }
+                &:hover{
+                    background: $blue;
+                }
+            }
+        }
+    }
+    .post_data--positioner {
+        width: 100%;
+        margin: 10px 0 0 0;
+        padding: 20px 0 0 0;
+        border-top: 1px solid $lightgray;
+        color: $textgray;
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+    }
+}

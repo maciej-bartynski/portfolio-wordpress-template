@@ -2454,6 +2454,61 @@ main.content--wrapper {
   #animations-page .animations-page-content--wrapper {
     display: none; } }
 
+.post-content--wrapper .post_metadata--positioner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 0 0 10px;
+  margin: 0;
+  list-style: none;
+  border-left: solid 1px #909090; }
+  .post-content--wrapper .post_metadata--positioner .post_metadata--item {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+  .post-content--wrapper .post_metadata--positioner .category {
+    color: #0066ff;
+    text-transform: uppercase; }
+  .post-content--wrapper .post_metadata--positioner .tagline {
+    padding: 5px 0; }
+  .post-content--wrapper .post_metadata--positioner .links {
+    display: flex;
+    flex-wrap: wrap; }
+    .post-content--wrapper .post_metadata--positioner .links a {
+      display: flex;
+      width: 100%;
+      max-width: 100px;
+      height: 40px;
+      background: #5498FF;
+      border-radius: 20px;
+      margin-right: 5px;
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+      .post-content--wrapper .post_metadata--positioner .links a:hover, .post-content--wrapper .post_metadata--positioner .links a:active, .post-content--wrapper .post_metadata--positioner .links a:visited, .post-content--wrapper .post_metadata--positioner .links a:focus {
+        text-decoration: none;
+        color: #ffffff; }
+      .post-content--wrapper .post_metadata--positioner .links a:hover {
+        background: #0066ff; }
+
+.post-content--wrapper .post_data--positioner {
+  width: 100%;
+  margin: 10px 0 0 0;
+  padding: 20px 0 0 0;
+  border-top: 1px solid #909090;
+  color: #808080; }
+  .post-content--wrapper .post_data--positioner img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0; }
+
 * {
   box-sizing: border-box; }
 
