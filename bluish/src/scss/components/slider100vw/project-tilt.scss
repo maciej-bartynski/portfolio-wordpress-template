@@ -60,9 +60,13 @@
                 display: flex;
                 justify-content: flex-end;
                 align-items: flex-end;
+                cursor: pointer;
                 span {
                     display: inline-block;
                     padding-right: 10px;
+                }
+                .heart {
+                    cursor: pointer;
                 }
             }
         }

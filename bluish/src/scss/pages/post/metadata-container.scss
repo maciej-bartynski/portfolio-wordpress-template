@@ -1,0 +1,169 @@
+.metadata-and-actions--positioner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0 10px 0;
+    margin: 0;
+    list-style: none;
+    background: $lightbgcolo;
+    @include project-shadow;
+   
+    .metadata-and-actions--item {
+        list-style: none;
+        padding: 0 10px;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .special-info{
+        color: $light;
+        background: $blue;
+        text-transform: uppercase;
+        font-size: 10px;
+        padding: 0 25px 0 0;
+        margin-bottom: 5px;
+        text-align: center;
+        display: block;
+        position: relative;
+        .close-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 4px 10px 5px 5px;
+            cursor: pointer;
+        }
+    }
+
+    .category{
+        color: $blue;
+        text-transform: uppercase;
+    }
+    .tagline {
+        padding: 5px 0;
+    }
+    .links{      
+            &+* {
+                margin-left: 5px;
+            }
+            display: inline-block;
+            border: solid 1px $lightblue;
+            border-radius: 5px;
+            color: $lightblue;
+            background: none;
+            text-decoration: none;
+            cursor: pointer;
+            user-select: none;
+            padding: 0 5px;
+            &:hover, &:active {
+                text-decoration: none;
+                color: $light;
+                background: $lightblue;
+            }
+            &:visited{
+                text-decoration: none;
+                
+            }
+    }
+    .rats {
+        border: solid 1px $lightblue;
+        border-right: none;
+        padding: 0 5px;
+        cursor: pointer;
+        color: $light;
+        background: $lightblue;
+        border-radius: 5px 0 0 5px;
+        &:hover {
+            color: $lightblue;
+            background: $light;
+        }
+    }
+    .coms {
+        border: solid 1px $lightblue;
+        padding: 0 5px;
+        cursor: pointer;
+        color: $lightblue;
+        border-radius: 0 5px 5px 0;
+        &:hover {
+            color: $light;
+            background: $lightblue;
+        }
+    }
+    .commented {
+        border-top: solid 1px $lightgray;
+        margin-top: 10px;
+        padding-top: 5px;
+        position: relative;
+        p{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            &.info {
+                color: $textgray;
+                font-size: 12px;
+                line-height: 15px;
+            }
+            &.com {
+                color: $lightblue;
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+        .trash {
+            color: $blue;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            margin: 5px;
+        }
+    }
+    .comments--positioner {
+        margin-top: 5px;
+        .comments--item {
+            width: 100%;
+            position: relative;
+            height: 40px;
+            border: solid 1px $lightblue;
+            input {
+                width: 100%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background: none;
+                padding: 0 30px 0 1%;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                background: $bgcolo;
+                color: $blue;
+                @include sans;
+                &:active, &:focus, &:hover {
+                    border: none;
+                    outline: none;
+                    background: none; 
+                }
+            }
+            button {
+                color: $blue;
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                min-width: 5%;
+                border: none;
+                outline: none;
+                background: none;
+                cursor: pointer;
+                &:active, &:focus, &:hover {
+                    border: none;
+                    outline: none;
+                    background: none; 
+                }
+            }
+        }
+    }
+}

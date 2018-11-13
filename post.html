@@ -73,19 +73,50 @@
             <main class="content--wrapper post-content--wrapper">
                 <div class="page-content-container paragraph">
                     
-                    <ul class="post_metadata--positioner">
-                        <li class="inner_title category post_metadata--item">
-                            <span>Category</span>
+                    <ul class="metadata-and-actions--positioner">
+                        <li class="metadata-and-actions--item special-info inner_title">
+                            Project still in progress
                         </li>
-                        <li class="inner_title tagline post_metadata--item">
-                            <span>#Tag</span>
-                            <span>#Other tag</span>
-                            <span>#TaglineTag</span>
-                            <span>#Other</span>
+                        <li class="metadata-and-actions--item">
+                            <span class="inner_title category">Category</span>
                         </li>
-                        <li class="links post_metadata--item">
-                            <a href="#">See the repo</a>
-                            <a href="#">See the app</a>
+                        <li class="metadata-and-actions--item">
+                            <span class="inner_title tagline">#Tag&nbsp;</span>
+                            <span class="inner_title tagline">#Other tag&nbsp;</span>
+                            <span class="inner_title tagline">#TaglineTag&nbsp;</span>
+                            <span class="inner_title tagline">#Other&nbsp;</span>
+                        </li>
+                        <li class="metadata-and-actions--item">
+                            <a class="links" href="#">See the repo</a>
+                            <a class="links" href="#">See the app</a>
+                            <div class="rats">
+                                <span>1</span>
+                                <i class="fas fa-heart filled-icon"></i>
+                                <i class="far fa--heart empty-icon"></i>
+                            </div>
+                            <div id="open-com-panel" class="coms">
+                                <i class="far fa-comment"></i>
+                            </div>
+                        </li>
+                        <li id="added-com-panel" class="metadata-and-actions--item commented">
+                            <p class="info">You have commented: </p>
+                            <p id="comm" class="com">Your comment goes here...</p>
+                            <i id="delete-comm" class="trash fas fa-trash"></i>
+                        </li>
+                    </ul>
+
+                    <ul id="add-com-panel" class="metadata-and-actions--positioner">
+                        <li class="special-info inner_title">
+                            Please note that Your comment will be visible only to You and me.
+                            If You want me to answer, make sure Your e-mail is somewhere there!
+                            <i id="close-comm" class="close-icon fas fa-times"></i>
+                        </li>
+                        <li class="metadata-and-actions--item comments--positioner">   
+                            <div class="comments--item">
+                                <input type="text" name="comment" placeholder="What do YOU think?"/>
+                                <button id="add-comm" class="comment-button"><i class="far fa-comment"></i></button>
+                                
+                            </div>
                         </li>
                     </ul>
 
