@@ -134,13 +134,19 @@
                 }
             }
             .contact-panel {
-                color: $blue;
                 @include serif;
                 font-size: 16px;
                 padding: 0 0 40px 0;
                 width: unset;
-                span {
+                
+                span, a {
                     display: block;
+                    color: $blue;
+                    text-decoration: none;
+                    &:visited {
+                        color: $blue;
+                        text-decoration: none;
+                    }
                 }
             }
             .animation-panel {

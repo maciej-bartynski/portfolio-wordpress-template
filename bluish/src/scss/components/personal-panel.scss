@@ -56,11 +56,14 @@
 
             cursor: pointer;
             user-select: none;
+            text-decoration: none;
 
             &:hover {
                 background-color: $button-typo-blue;
                 color: $blue;
+                text-decoration: none;
             }
+            
         }
     }
 }
