@@ -164,10 +164,17 @@
         width: 1200px;
     }
 
+    a {
+        text-decoration: none;
+        &:visited{
+            text-decoration: none;
+        }
+    }
     .tools--cell {
         width: calc(100% - 10px);
         margin: 5px auto;
         height: unset;
+        
         @media screen and (min-width: 240px){
             width: 230px;
             margin: 5px;

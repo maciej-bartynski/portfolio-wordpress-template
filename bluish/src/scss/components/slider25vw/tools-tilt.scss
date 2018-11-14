@@ -79,3 +79,43 @@
     }
 }
 
+.tools--cell.un-finished {
+   
+
+    .tools_upper--positioner {
+        
+
+        .tools_icons--positioner {
+           
+
+            i {
+                color: $lightblue;
+               
+            }
+
+            img.tools_icons-logo--container {
+                
+                border: solid 1px $lightblue;
+            }
+        }
+
+        span.tools_name {
+            
+            color: $lightblue
+        }
+    }
+
+    .tools_lower--positioner {
+     
+        background: $lightblue;
+
+        span.tools_button {
+            
+            color: $button-typo-blue;
+        }
+    }
+
+   
+
+    
+}
