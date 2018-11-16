@@ -8,7 +8,9 @@ $lightbgcolo: #efffff;
 $placeholder: #707070;
 $textgray: #808080;
 
-$xd: rgba(0, 102, 255, 01);
+@mixin xd ($var: 1) {
+    background: rgba(0, 102, 255, $var);
+}
 //margins
 @mixin navi-margin {
     padding: 0 40px;

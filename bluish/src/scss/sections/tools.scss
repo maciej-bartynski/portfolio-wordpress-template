@@ -1,5 +1,6 @@
 #tools04{
     margin-bottom: 50px;
+    @include xd(0.7);
     .tools04--title {
         width: 100%;
         text-align: center;
