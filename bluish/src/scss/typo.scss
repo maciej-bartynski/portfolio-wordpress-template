@@ -1,16 +1,38 @@
 .title--big {
-     @include sans;
-     font-size: 21px;
-     line-height: 28px;
-     letter-spacing: 2px;
-     color: $blue;
-     font-weight: 400;
-     margin: 0;
-     padding: 0;
+    @include sans;
+    font-size: 21px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    color: $blue;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
     @media screen and (min-width: 900px){
-         font-size: 60px;
-         line-height: 80px;
-         letter-spacing: 6px;
+        //font-size: 60px;//5.55%
+        //line-height: 80px;//7.40%
+        //letter-spacing: 6px;//0.55%
+        @media screen and (orientation: landscape){
+            @media screen and (min-height: 500px){
+                font-size: 27.75px;
+                line-height: 37px;
+                letter-spacing: 2.75px;
+            }
+            @media screen and (min-height: 700px){
+                font-size: 38.85px;
+                line-height: 51.8px;
+                letter-spacing: 3.85px;
+            }
+            @media screen and (min-height: 900px){
+                font-size: 49.95px;
+                line-height: 66.6px;
+                letter-spacing: 4.95px;
+            }
+            @media screen and (min-height: 1000px){
+                font-size: 55.5px;
+                line-height: 74px;
+                letter-spacing: 5.5px;
+            }
+        }
     }
 }
 

@@ -1,0 +1,49 @@
+#hero-blob {
+
+    width: 120vw;//100vw;
+    height: 120vw;//100vw;
+    border-radius: 50vw;
+    background-image: radial-gradient(circle at 50% 50%, $light 15%, transparent 85%);
+   // background: $light;//blue;
+    //border-top: $light 5px solid;
+    //border-bottom: $light 5px solid;
+    //border-right: solid 5px $lightblue;
+    //border-left: solid 5px $lightblue;
+    transform: rotate(-45deg);
+    z-index: -10;
+
+    position: absolute; 
+    left: -80vw;//-50vw;
+    top: -50vh;//calc(100vh - 50vw); 
+
+   //animation: rotatethisthing infinite 90000ms linear;
+    @keyframes rotatethisthing {
+        from {
+            transform: rotate(-45deg); 
+        }
+    
+        to {
+            transform: rotate(315deg);
+        }
+    }
+}
+
+#under-blob {
+    width: 110vw;
+    height: 100vw;
+    //background: $lightblue;
+    //background: radial-gradient(circle at 50% 50%, $lightblue 5%, transparent 35%);
+    transform: skewX(-60deg);
+
+    position: absolute; 
+    right: -10vw;
+    top:1vh;
+    z-index: -10;
+    background: linear-gradient(135deg, rgba(255,255,255,0) 20%,rgba(84,152,255,0.51) 100%);
+}
+
+@media screen and (max-width: 899px){
+    #hero-blob, #under-blob{
+        display: none;
+    }
+}

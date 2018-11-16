@@ -6,6 +6,24 @@
         width: 60vw;
         height: 23.9297vw;
     }
+    @media screen and (orientation: landscape){
+        @media screen and (min-height: 500px){
+            width: 157.85px;
+            height: 62.95px;
+        }
+        @media screen and (min-height: 700px){
+            width: 221px;
+            height: 88.13px;
+        }
+        @media screen and (min-height: 900px){
+            width: 284.13px;
+            height: 113.31px;
+        }
+        @media screen and (min-height: 1000px){
+            width: 341px;//31.57%
+            height: 136px;//12.59%
+        }
+    }
     
     img {
         position: absolute;
@@ -20,6 +38,21 @@
 
         @media screen and (max-width: 599px) {
             border: solid 3px $blue;
+        }
+
+        @media screen and (orientation: landscape){
+            @media screen and (min-height: 500px){
+                border: solid 5px $blue;
+            }
+            @media screen and (min-height: 700px){
+                border: solid 7px $blue;
+            }
+            @media screen and (min-height: 900px){
+                border: solid 9px $blue;
+            }
+            @media screen and (min-height: 1000px){
+                border: solid 10px $blue;
+            }
         }
     }
     .personal-panel--positioner {
@@ -50,6 +83,21 @@
             @media screen and (max-width: 599px) {
                 font-size: 13px;
             }
+            @media screen and (orientation: landscape){
+                @media screen and (min-height: 500px){
+                    font-size: 9px;
+                }
+                @media screen and (min-height: 700px){
+                    font-size: 10px;
+                }
+                @media screen and (min-height: 900px){
+                    font-size: 11.7px;
+                }
+                @media screen and (min-height: 1000px){
+                    font-size: 13px;
+                }
+            }
+            
             text-transform: uppercase;
             color: $button-typo-blue;
             padding-left: 35%;
