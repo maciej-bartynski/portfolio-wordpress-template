@@ -9,6 +9,10 @@
 #machina-wrapper {
     width: 100%;//47.25vw;
     //height: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     #machina {
         width: 100%;
         height: auto;

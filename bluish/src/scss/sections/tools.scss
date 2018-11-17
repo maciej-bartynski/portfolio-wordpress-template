@@ -1,6 +1,8 @@
 #tools04{
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin-bottom: 50px;
-    @include xd(0.7);
+    @include xd(0.1);
     .tools04--title {
         width: 100%;
         text-align: center;
