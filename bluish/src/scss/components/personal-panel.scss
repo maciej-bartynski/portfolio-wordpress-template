@@ -55,7 +55,34 @@
             }
         }
     }
+
+    
     .personal-panel--positioner {
+        .personal-panel--more {
+            width: 25px;
+            height: 25px;
+            border-radius: 12.5px;
+            background: $blue;
+           
+            font-size: 11px;
+            
+            color: $light;
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            margin-top: -12.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            &:hover {
+                background-color: $button-typo-blue;
+                color: $blue;
+                text-decoration: none;
+            }
+
+        }
         width: 80.0586%;
         height: 92%;
         position: absolute;
@@ -78,6 +105,7 @@
             background-color: $blue;
             border-top-right-radius: 100px;
             border-bottom-right-radius: 100px;
+           
             @include sans;
             font-size: 20px;
             @media screen and (max-width: 599px) {

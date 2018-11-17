@@ -556,7 +556,16 @@ body {
   min-height: calc(100vh - 60px);
   display: block;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms; }
+  #header02.on-scroll {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
   #header02 .header02--positioner {
     width: 100%;
     height: 100%; }
@@ -756,24 +765,40 @@ body {
         font-family: 'Roboto Slab', serif;
         font-size: 16px;
         padding: 0 0 40px 0;
-        width: unset; }
+        width: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 500px;
+        padding-top: 20px;
+        border-top: solid 1px #5498FF; }
         #header02 .header02--positioner .contact-panel span, #header02 .header02--positioner .contact-panel a {
           display: block;
           color: #0066ff;
           text-decoration: none; }
           #header02 .header02--positioner .contact-panel span:visited, #header02 .header02--positioner .contact-panel a:visited {
             color: #0066ff;
-            text-decoration: none; } }
+            text-decoration: none; }
+        #header02 .header02--positioner .contact-panel .contact--item {
+          display: flex;
+          flex-direction: column; } }
 
 #projekty03 {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: rgba(255, 255, 255, 0.9); }
+  background: rgba(255, 255, 255, 0.9);
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5); }
   #projekty03 h2 {
     padding: 0 40px;
     width: 100%;
     margin: 0;
-    text-align: center; }
+    text-align: center;
+    color: #0066ff; }
     @media screen and (min-width: 900px) {
       #projekty03 h2 {
         padding: 0 5%; } }
@@ -786,6 +811,9 @@ body {
     @media screen and (min-width: 900px) {
       #projekty03 h2 {
         text-align: left; } }
+  #projekty03.on-scroll {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
 
 #tools04 {
   padding-top: 50px;
@@ -1694,6 +1722,29 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start; }
+    .personal-panel--component .personal-panel--positioner .personal-panel--more {
+      width: 25px;
+      height: 25px;
+      border-radius: 12.5px;
+      background: #0066ff;
+      font-size: 11px;
+      color: #ffffff;
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      margin-top: -12.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
+      .personal-panel--component .personal-panel--positioner .personal-panel--more:hover {
+        background-color: #8DBAFF;
+        color: #0066ff;
+        text-decoration: none; }
     .personal-panel--component .personal-panel--positioner .personal-panel--item {
       display: flex;
       align-items: center;
@@ -2379,20 +2430,162 @@ body {
             transform: rotate(315deg); } }
 
 #under-blob {
-  width: 110vw;
-  height: 100vw;
-  -webkit-transform: skewX(-60deg);
-          transform: skewX(-60deg);
+  width: 80vw;
+  height: 80vw;
+  border-radius: 40vw;
   position: absolute;
-  right: -10vw;
-  top: 1vh;
+  right: -40vw;
+  top: calc(100vh - 40vw);
   z-index: -10;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 20%, rgba(84, 152, 255, 0.51) 100%); }
+  background: radial-gradient(circle at 50% 50%, rgba(84, 152, 255, 0.51) 20%, rgba(255, 255, 255, 0) 70%); }
 
 @media screen and (max-width: 899px) {
   #hero-blob, #under-blob {
     display: none; } }
 
+.header02--scroller-positioner {
+  width: unset;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: transparent;
+  bottom: 0;
+  left: 0; }
+  .header02--scroller-positioner .header02--scroller-container {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%; }
+    .header02--scroller-positioner .header02--scroller-container::before {
+      content: "";
+      width: 40px;
+      height: 40px;
+      box-sizing: border-box;
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      border-top: solid 4px #0066ff;
+      border-right: solid 4px transparent;
+      border-left: solid 4px transparent;
+      border-bottom: solid 4px transparent;
+      border-radius: 20px; }
+    .header02--scroller-positioner .header02--scroller-container .header02--scroller-item_b {
+      color: #0066ff;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden; }
+      .header02--scroller-positioner .header02--scroller-container .header02--scroller-item_b .angle-ico {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+        margin-left: -5px;
+        -webkit-animation: margin-change 2000ms linear infinite;
+                animation: margin-change 2000ms linear infinite; }
+
+@-webkit-keyframes margin-change {
+  from {
+    top: 50%; }
+  20% {
+    top: 67%; }
+  40% {
+    top: 50%; }
+  100% {
+    top: 50%; } }
+
+@keyframes margin-change {
+  from {
+    top: 50%; }
+  20% {
+    top: 67%; }
+  40% {
+    top: 50%; }
+  100% {
+    top: 50%; } }
+    .header02--scroller-positioner .header02--scroller-container:hover::before {
+      -webkit-animation: element-rotate 500ms ease forwards;
+              animation: element-rotate 500ms ease forwards;
+      border-top: solid 4px #0066ff;
+      border-bottom: solid 4px #0066ff; }
+
+@-webkit-keyframes element-rotate {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+    width: 40px;
+    height: 40px;
+    top: -6px;
+    left: -6px; }
+  to {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+    width: 48px;
+    height: 40px;
+    top: -6px;
+    left: -10px; } }
+
+@keyframes element-rotate {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+    width: 40px;
+    height: 40px;
+    top: -6px;
+    left: -6px; }
+  to {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+    width: 48px;
+    height: 40px;
+    top: -6px;
+    left: -10px; } }
+    .header02--scroller-positioner .header02--scroller-container:hover .header02--scroller-item_b .angle-ico {
+      -webkit-animation: scroll-simulate infinite 500ms linear;
+              animation: scroll-simulate infinite 500ms linear; }
+
+@-webkit-keyframes scroll-simulate {
+  from {
+    top: -10%;
+    opacity: 0; }
+  50% {
+    top: 45%;
+    opacity: 1; }
+  to {
+    top: 110%;
+    opacity: 0; } }
+
+@keyframes scroll-simulate {
+  from {
+    top: -10%;
+    opacity: 0; }
+  50% {
+    top: 45%;
+    opacity: 1; }
+  to {
+    top: 110%;
+    opacity: 0; } }
+
+/*
+<div class="header02--scroller-positioner"><div clas="header02-scroller-container"><div style="
+border-top: solid 4px black;
+border-right: solid 4px black;
+border-left: solid 4px transparent;
+border-bottom: solid 4px transparent;
+transform: rotate(-45deg);
+border-radius: 40px;
+width: 20px;
+height: 20px;
+"
+class="header02--scroller-item_a"></div><div class="header02--scroller-item_b"><i class="fas fa-angle-down"></i></div></div></div>
+
+*/
 header.head--wrapper {
   width: 100%;
   min-height: 10vw;
@@ -3030,3 +3223,14 @@ body {
   position: relative;
   width: 100%;
   overflow-x: hidden; }
+
+.scrolling-stage {
+  min-height: calc(100vh - 60px);
+  transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5); }
+  .scrolling-stage.on-scroll {
+    -webkit-transform: scale(1);
+            transform: scale(1); }

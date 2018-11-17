@@ -11,10 +11,15 @@
     display: block;
     position: relative;
     overflow: hidden;
-    @media screen and (min-width: 900px){
-        //border-bottom: solid 2px $blue;
-       // margin-bottom: -8px;
+    box-sizing: border-box;
+
+    transform: scale(0.5);
+    transition: transform 200ms;
+
+    &.on-scroll {
+        transform: scale(1);
     }
+    
     
     .header02--positioner {
         width: 100%;
@@ -221,7 +226,13 @@
             font-size: 16px;
             padding: 0 0 40px 0;
             width: unset;
-           
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 500px;
+            padding-top: 20px;
+            border-top: solid 1px $lightblue;
             
             span, a {
                 display: block;
@@ -231,6 +242,11 @@
                     color: $blue;
                     text-decoration: none;
                 }
+            }
+
+            .contact--item {
+               display: flex;
+               flex-direction: column;
             }
         }
     }

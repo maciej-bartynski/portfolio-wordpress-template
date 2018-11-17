@@ -29,17 +29,18 @@
 }
 
 #under-blob {
-    width: 110vw;
-    height: 100vw;
+    width: 80vw;
+    height: 80vw;
+    border-radius: 40vw;
     //background: $lightblue;
     //background: radial-gradient(circle at 50% 50%, $lightblue 5%, transparent 35%);
-    transform: skewX(-60deg);
+    //transform: skewX(-60deg);
 
     position: absolute; 
-    right: -10vw;
-    top:1vh;
+    right: -40vw;
+    top: calc(100vh - 40vw);
     z-index: -10;
-    background: linear-gradient(135deg, rgba(255,255,255,0) 20%,rgba(84,152,255,0.51) 100%);
+    background: radial-gradient(circle at 50% 50%, rgba(84, 152, 255, 0.51) 20%, rgba(255, 255, 255, 0) 70%);
 }
 
 @media screen and (max-width: 899px){

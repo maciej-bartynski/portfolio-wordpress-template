@@ -3,6 +3,7 @@ import './index.scss';
 import $ from 'jquery';
 
 import './scripts/animatable-bg.js';
+import './scripts/scrolling-effects.js';
 import './scripts/slider-portfolio.js';
 import './scripts/slider-tools.js';
 import './scripts/sectionslide-tools.js';

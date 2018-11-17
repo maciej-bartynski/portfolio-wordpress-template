@@ -25,6 +25,7 @@
 @import './scss/components/slider25vw/tools-tilt.scss';
 @import './scss/components/section-border.scss';
 @import './scss/components/header-blob.scss';
+@import './scss/components/scroller.scss';
 
 //pages
 @import './scss/pages/subpage.scss';
@@ -53,3 +54,12 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+
+.scrolling-stage {
+    min-height: calc(100vh - 60px);
+    transition: transform 200ms;
+    transform: scale(0.5);
+    &.on-scroll {
+        transform: scale(1);
+    }
+}//
