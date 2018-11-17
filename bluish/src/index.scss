@@ -59,7 +59,8 @@ body {
     min-height: calc(100vh - 60px);
     transition: transform 200ms;
     transform: scale(0.5);
+    
     &.on-scroll {
         transform: scale(1);
     }
-}//
+}
